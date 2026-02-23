@@ -1,608 +1,865 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boda Yazmin & David</title>
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Perfumes</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .font-body { font-family: 'Montserrat', system-ui, sans-serif; }
+    .product-card:hover .product-image { transform: scale(1.05); }
+    .product-card:hover .product-overlay { opacity: 1; }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+    .animate-delay-4 { animation-delay: 0.4s; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body">
+  <div id="app" class="w-full h-full overflow-auto bg-white text-black">
+   
+   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-black/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+     <a href="#inicio" id="nav-brand" class="font-display text-2xl font-medium tracking-wider">ESSENCE</a>
+     <div class="hidden md:flex items-center gap-8">
+      <a href="#inicio" class="nav-link text-xs tracking-widest uppercase font-medium">Inicio</a> 
+      <a href="#coleccion" class="nav-link text-xs tracking-widest uppercase font-medium">Colección</a> 
+      <a href="#nosotros" class="nav-link text-xs tracking-widest uppercase font-medium">Nosotros</a> 
+      <a href="#contacto" class="nav-link text-xs tracking-widest uppercase font-medium">Contacto</a>
+     </div>
+     <button id="menu-toggle" class="md:hidden p-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" /></svg>
+     </button>
+    </div>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/10">
+     <div class="px-6 py-4 space-y-4">
+      <a href="#inicio" class="block text-xs tracking-widest uppercase font-medium">Inicio</a> 
+      <a href="#coleccion" class="block text-xs tracking-widest uppercase font-medium">Colección</a> 
+      <a href="#nosotros" class="block text-xs tracking-widest uppercase font-medium">Nosotros</a> 
+      <a href="#contacto" class="block text-xs tracking-widest uppercase font-medium">Contacto</a>
+     </div>
+    </div>
+   </nav>
+
+   <section id="inicio" class="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+     <svg class="w-full h-full" viewbox="0 0 100 100" preserveaspectratio="none">
+      <defs>
+       <pattern id="grid" width="10" height="10" patternunits="userSpaceOnUse">
+        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.1" />
+       </pattern>
+      </defs> 
+      <rect width="100" height="100" fill="url(#grid)" />
+     </svg>
+    </div>
+    <div class="relative z-10 text-center px-6 max-w-4xl animate-fade-in">
+     <p class="text-xs tracking-[0.3em] uppercase mb-6 opacity-70">Fragancias Exclusivas</p>
+     <h1 id="hero-title" class="font-display text-5xl md:text-7xl lg:text-8xl font-light mb-6 leading-tight">El Arte de la<br>Perfumería</h1>
+     <p id="hero-subtitle" class="text-lg md:text-xl font-light opacity-80 max-w-2xl mx-auto mb-10">Descubre nuestra colección de fragancias únicas, creadas para quienes buscan la distinción y la elegancia.</p>
+     <a href="#coleccion" class="inline-block border border-white px-10 py-4 text-xs tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300"> Ver Colección </a>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+    </div>
+   </section>
+
+   <section id="coleccion" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+     <div class="text-center mb-20">
+      <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Nuestra Selección</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light">Colección</h2>
+     </div>
+
+     <div class="mb-32">
+      <h3 id="women_title" class="font-display text-3xl md:text-4xl font-light text-center mb-16 pb-8 border-b border-black/10">Perfumes para Dama</h3>
+      
+      <div class="mb-20">
+       <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="20" y="30" width="40" height="70" rx="4" stroke="currentColor" stroke-width="1.5" /> <rect x="28" y="15" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5" /> <rect x="35" y="5" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1.5" /> <line x1="30" y1="50" x2="50" y2="50" stroke="currentColor" stroke-width="0.5" /> <text x="40" y="65" text-anchor="middle" class="text-[6px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Noir Élégant</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 100ml</p>
+          <p class="font-medium">€89</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="70" rx="20" ry="30" stroke="currentColor" stroke-width="1.5" /> <path d="M35 40 L35 25 Q40 20 45 25 L45 40" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="75" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Blanc Mystère</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 75ml</p>
+          <p class="font-medium">€75</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M25 100 L25 45 Q40 30 55 45 L55 100 Z" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="32" y="25" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="15" r="6" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="75" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Ombre Sensuelle</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Toilette · 50ml</p>
+          <p class="font-medium">€65</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="22" y="35" width="36" height="65" rx="18" stroke="currentColor" stroke-width="1.5" /> <rect x="32" y="20" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5" /> <rect x="37" y="8" width="6" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Velours Nuit</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 100ml</p>
+          <p class="font-medium">€95</p>
+         </div>
+        </div>
+       </div>
+      </div>
+
+      <div class="mb-20">
+       <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes Árabes</h4>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 20,50 40,35 60,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="20" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Cristal Absolu</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Parfum · 30ml</p>
+          <p class="font-medium">€120</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="25" y="40" width="30" height="55" stroke="currentColor" stroke-width="1.5" /> <rect x="30" y="25" width="20" height="18" stroke="currentColor" stroke-width="1.5" /> <line x1="30" y1="32" x2="50" y2="32" stroke="currentColor" stroke-width="0.5" /> <rect x="37" y="12" width="6" height="15" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Soir d'Été</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 75ml</p>
+          <p class="font-medium">€82</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="60" rx="18" ry="35" stroke="currentColor" stroke-width="1.5" /> <path d="M35 28 L40 15 L45 28" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="65" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Aura Dorada</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 100ml</p>
+          <p class="font-medium">€98</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M30 95 Q30 40 40 30 Q50 40 50 95" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="25" r="6" stroke="currentColor" stroke-width="1.5" /> <rect x="35" y="12" width="10" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Roseah Qamar</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 85ml</p>
+          <p class="font-medium">€105</p>
+         </div>
+        </div>
+       </div>
+      </div>
+
+      <div class="mb-20">
+       <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes Nicho</h4>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><defs><pattern id="dots" x="0" y="0" width="8" height="8" patternunits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="currentColor" /></pattern></defs> <rect x="20" y="35" width="40" height="60" rx="6" stroke="currentColor" stroke-width="1.5" /> <rect x="28" y="18" width="24" height="18" rx="3" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Nicho Secreto</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Extrait de Parfum · 50ml</p>
+          <p class="font-medium">€135</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="24" y="38" width="32" height="55" stroke="currentColor" stroke-width="1.5" /> <path d="M32 38 L28 25 Q40 18 52 25 L48 38" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="20" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Essência Rara</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 60ml</p>
+          <p class="font-medium">€128</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 18,50 40,32 62,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="18" width="8" height="15" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="3.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Joya Perfumada</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 75ml</p>
+          <p class="font-medium">€115</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M35 95 L35 45 Q40 30 45 45 L45 95" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="38" r="12" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="20" r="5" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="8" width="8" height="13" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Fragancia Etérea</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 55ml</p>
+          <p class="font-medium">€140</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+
+     <div>
+      <h3 id="men_title" class="font-display text-3xl md:text-4xl font-light text-center mb-16 pb-8 border-b border-black/10">Perfumes para Caballero</h3>
+      
+      <div class="mb-20">
+       <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="18" y="32" width="44" height="68" stroke="currentColor" stroke-width="1.5" /> <rect x="26" y="16" width="28" height="18" stroke="currentColor" stroke-width="1.5" /> <rect x="34" y="4" width="12" height="14" stroke="currentColor" stroke-width="1.5" /> <line x1="28" y1="48" x2="52" y2="48" stroke="currentColor" stroke-width="0.5" /> <text x="40" y="70" text-anchor="middle" class="text-[6px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Acero Intenso</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Toilette · 100ml</p>
+          <p class="font-medium">€85</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M30 100 L30 48 L25 30 L40 25 L55 30 L50 48 L50 100" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="12" width="10" height="16" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="8" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Vigor Oscuro</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 90ml</p>
+          <p class="font-medium">€92</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="22" y="34" width="36" height="64" rx="3" stroke="currentColor" stroke-width="1.5" /> <polygon points="40,20 32,28 48,28" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="10" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Esencia Fuerte</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Toilette · 75ml</p>
+          <p class="font-medium">€78</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="65" rx="22" ry="32" stroke="currentColor" stroke-width="1.5" /> <path d="M35 32 L40 20 L45 32" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="25" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Poder Absoluto</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 100ml</p>
+          <p class="font-medium">€99</p>
+         </div>
+        </div>
+       </div>
+      </div>
+
+      <div class="mb-20">
+       <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes Árabes</h4>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M25 100 Q25 55 40 38 Q55 55 55 100" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="22" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="16" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Oudh Supremo</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 85ml</p>
+          <p class="font-medium">€110</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 20,45 40,30 60,45" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="5" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="10" width="8" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Ambar Legendario</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 90ml</p>
+          <p class="font-medium">€118</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="24" y="36" width="32" height="60" rx="4" stroke="currentColor" stroke-width="1.5" /> <path d="M32 36 L28 22 Q40 15 52 22 L48 36" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Nobleza Árabe</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 80ml</p>
+          <p class="font-medium">€112</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M32 98 L32 42 L28 28 L40 22 L52 28 L48 42 L48 98" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="4" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="8" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Sharqi Imperial</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 95ml</p>
+          <p class="font-medium">€125</p>
+         </div>
+        </div>
+       </div>
+      </div>
+
+      <div>
+       <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes Nicho</h4>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="20" y="34" width="40" height="63" rx="5" stroke="currentColor" stroke-width="1.5" /> <path d="M28 34 L32 20 Q40 15 48 20 L52 34" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="17" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Firma Élite</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Extrait de Parfum · 50ml</p>
+          <p class="font-medium">€145</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><circle cx="40" cy="65" r="25" stroke="currentColor" stroke-width="1.5" /> <path d="M36 40 L40 28 L44 40" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="33" r="3.5" stroke="currentColor" stroke-width="1.5" /> <rect x="37" y="16" width="6" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Espíritu Crudo</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 65ml</p>
+          <p class="font-medium">€138</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,95 18,50 28,30 40,25 52,30 62,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="14" width="8" height="13" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="10" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Rareza Singular</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 70ml</p>
+          <p class="font-medium">€150</p>
+         </div>
+        </div>
+
+        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-6">
+          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+           <svg class="w-32 h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="23" y="35" width="34" height="62" stroke="currentColor" stroke-width="1.5" /> <path d="M30 35 Q30 20 40 15 Q50 20 50 35" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
+          </div>
+          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+          </div>
+         </div>
+         <div class="text-center">
+          <h5 class="font-display text-xl mb-2">Legado Perfecto</h5>
+          <p class="text-xs tracking-wider uppercase opacity-60 mb-3">Eau de Parfum · 60ml</p>
+          <p class="font-medium">€155</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <section id="nosotros" class="py-24 px-6 bg-black text-white">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+       <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Nuestra Historia</p>
+       <h2 id="about-title" class="font-display text-4xl md:text-5xl font-light mb-8">Sobre Nosotros</h2>
+       <p id="about-text" class="text-lg font-light leading-relaxed opacity-80 mb-8">Desde 2010, nos dedicamos a crear fragancias únicas que cuentan historias. Cada perfume es una obra de arte, elaborada con los ingredientes más selectos de todo el mundo. Nuestra pasión por la perfumería nos impulsa a buscar la excelencia en cada nota, cada acorde, cada creación.</p>
+       <div class="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
+        <div>
+         <p class="font-display text-4xl mb-2">14+</p>
+         <p class="text-xs tracking-wider uppercase opacity-60">Años de Experiencia</p>
+        </div>
+        <div>
+         <p class="font-display text-4xl mb-2">50+</p>
+         <p class="text-xs tracking-wider uppercase opacity-60">Fragancias Únicas</p>
+        </div>
+        <div>
+         <p class="font-display text-4xl mb-2">10K+</p>
+         <p class="text-xs tracking-wider uppercase opacity-60">Clientes Felices</p>
+        </div>
+       </div>
+      </div>
+      <div class="relative">
+       <div class="aspect-square bg-white/5 flex items-center justify-center">
+        <svg class="w-48 h-48 text-white/30" viewbox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="0.5" /> <circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="0.5" /> <circle cx="50" cy="50" r="25" stroke="currentColor" stroke-width="0.5" /> <path d="M50 5 L50 95 M5 50 L95 50" stroke="currentColor" stroke-width="0.3" /> <text x="50" y="52" text-anchor="middle" class="text-[8px] font-display" fill="currentColor">ESSENCE</text></svg>
+       </div>
+       <div class="absolute -bottom-6 -right-6 w-32 h-32 border border-white/20"></div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <section class="py-24 px-6 bg-neutral-50">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="text-center">
+       <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+       </div>
+       <h3 class="font-display text-xl mb-3">Ingredientes Premium</h3>
+       <p class="text-sm opacity-70 leading-relaxed">Seleccionamos las materias primas más exclusivas de los mejores proveedores del mundo.</p>
+      </div>
+      <div class="text-center">
+       <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
+       </div>
+       <h3 class="font-display text-xl mb-3">Envío Exclusivo</h3>
+       <p class="text-sm opacity-70 leading-relaxed">Cada pedido se empaqueta con el máximo cuidado y elegancia que merece.</p>
+      </div>
+      <div class="text-center">
+       <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+       </div>
+       <h3 class="font-display text-xl mb-3">Creaciones Únicas</h3>
+       <p class="text-sm opacity-70 leading-relaxed">Fragancias diseñadas para expresar tu personalidad única e irrepetible.</p>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <section id="contacto" class="py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+     <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Hablemos</p>
+     <h2 class="font-display text-4xl md:text-5xl font-light mb-8">Contacto</h2>
+     <p class="text-lg opacity-70 mb-12 max-w-2xl mx-auto">¿Tienes preguntas sobre nuestras fragancias? Estamos aquí para ayudarte a encontrar tu aroma perfecto.</p>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div class="p-8 border border-black/10 hover:border-black/30 transition-colors">
+       <svg class="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+       <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Teléfono</p>
+       <p id="contact-phone" class="font-display text-xl">+34 912 345 678</p>
+      </div>
+      <div class="p-8 border border-black/10 hover:border-black/30 transition-colors">
+       <svg class="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+       <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Email</p>
+       <p id="contact-email" class="font-display text-xl">info@essence.com</p>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <footer class="py-12 px-6 bg-black text-white">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <p id="footer-brand" class="font-display text-2xl tracking-wider">ESSENCE</p>
+      <p class="text-xs opacity-60">© 2024 Essence Perfumes. Todos los derechos reservados.</p>
+      <div class="flex gap-6">
+       <a href="#" class="text-xs opacity-60 hover:opacity-100 transition-opacity">Privacidad</a> 
+       <a href="#" class="text-xs opacity-60 hover:opacity-100 transition-opacity">Términos</a>
+      </div>
+     </div>
+    </div>
+   </footer>
+
+   <div id="perfume-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+     <div class="bg-white text-black max-w-3xl w-full mx-4 p-8 md:p-12 relative transform scale-95 transition-transform duration-300" id="modal-content">
+       <button id="close-modal" class="absolute top-4 right-4 text-black/50 hover:text-black transition-colors p-2">
+         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+       </button>
+       
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+         <div id="modal-image" class="aspect-[3/4] bg-neutral-100 flex items-center justify-center overflow-hidden">
+         </div>
+         
+         <div>
+           <p id="modal-category" class="text-xs tracking-wider uppercase opacity-60 mb-2"></p>
+           <h3 id="modal-title" class="font-display text-4xl mb-4"></h3>
+           <p id="modal-price" class="font-medium text-2xl mb-6"></p>
+           <p class="text-sm opacity-70 mb-0 leading-relaxed">
+             Una fragancia exquisita diseñada para despertar los sentidos. 
+             Combina notas superiores frescas con un corazón profundo y una 
+             base duradera que deja una estela inolvidable. Perfecta para cualquier ocasión.
+           </p>
+         </div>
+       </div>
+     </div>
+   </div>
+   </div>
+
+  <script>
+    const defaultConfig = {
+      brand_name: 'ESSENCE',
+      hero_title: 'El Arte de la<br>Perfumería',
+      hero_subtitle: 'Descubre nuestra colección de fragancias únicas, creadas para quienes buscan la distinción y la elegancia.',
+      about_title: 'Sobre Nosotros',
+      about_text: 'Desde 2010, nos dedicamos a crear fragancias únicas que cuentan historias. Cada perfume es una obra de arte, elaborada con los ingredientes más selectos de todo el mundo. Nuestra pasión por la perfumería nos impulsa a buscar la excelencia en cada nota, cada acorde, cada creación.',
+      contact_phone: '+34 912 345 678',
+      contact_email: 'info@essence.com',
+      background_color: '#ffffff',
+      surface_color: '#000000',
+      text_color: '#000000',
+      accent_color: '#ffffff',
+      font_family: 'Cormorant Garamond',
+      font_size: 16
+    };
+
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ==========================================
+    // Lógica del Modal
+    // ==========================================
+    const modal = document.getElementById('perfume-modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeModalBtn = document.getElementById('close-modal');
     
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    // Función para abrir el modal con los datos
+    function openModal(title, category, price, imageHTML) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-category').textContent = category;
+      document.getElementById('modal-price').textContent = price;
+      
+      // Inyectamos el mismo SVG/Imagen que tiene la tarjeta
+      document.getElementById('modal-image').innerHTML = imageHTML;
+      
+      // Ajustamos un poco las clases del SVG para que se vea más grande en el modal
+      const svg = document.querySelector('#modal-image svg');
+      if(svg) {
+        svg.classList.remove('w-32', 'h-48');
+        svg.classList.add('w-48', 'h-72');
+      }
+
+      // Mostrar modal
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      
+      // Pequeño delay para que la animación de opacidad y escala funcione
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }, 10);
+    }
+
+    // Función para cerrar el modal
+    function closeModal() {
+      modal.classList.add('opacity-0');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      
+      // Esperar a que termine la animación para ocultarlo del todo
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }, 300); 
+    }
+
+    // Agregar el evento click a todos los botones "Ver Detalles"
+    document.querySelectorAll('.product-card').forEach(card => {
+      const verDetallesBtn = card.querySelector('.product-overlay span');
+      
+      if (verDetallesBtn) {
+        verDetallesBtn.addEventListener('click', (e) => {
+          e.stopPropagation(); // Evita que el click se propague
+          
+          // Extraemos la información directamente de la tarjeta HTML
+          const title = card.querySelector('h5').textContent;
+          const category = card.querySelector('.text-center p:first-of-type').textContent;
+          const price = card.querySelector('.text-center p:last-of-type').textContent;
+          const imageHTML = card.querySelector('.product-image').innerHTML;
+
+          openModal(title, category, price, imageHTML);
+        });
+      }
+    });
+
+    // Eventos para cerrar el modal
+    closeModalBtn.addEventListener('click', closeModal);
     
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    // Cerrar si se hace click fuera del contenido (en el fondo oscuro)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+    // ==========================================
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&family=Cinzel+Decorative:wght@400;700&display=swap');
-        
-        body { font-family: 'Lato', sans-serif; overflow-x: hidden; background-color: #ffffff; }
-        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
-        .font-script { font-family: 'Great Vibes', cursive; }
-        .font-cinzel { font-family: 'Cinzel Decorative', serif; }
-        
-        /* Colores */
-        .text-olive { color: #606c38; }
-        .bg-olive { background-color: #606c38; }
-        .text-gold { color: #b08d55; } /* Dorado más oscuro para fondo blanco */
-        
-        /* Animaciones */
-        .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
-        .animate-fade-in { animation: fadeIn 1.5s ease-out forwards; }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
 
-        /* --- ESTILOS DEL SOBRE MEJORADOS (Versión Grande y Opaca) --- */
-        
-        /* Fondo Blanco estilo Marca de Agua */
-        .envelope-screen-bg {
-            background-color: #ffffff;
-            /* Patrón sutil de fondo */
-            background-image: radial-gradient(#e6e6e6 1px, transparent 1px), radial-gradient(#e6e6e6 1px, transparent 1px);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
-        }
-        
-        /* Contenedor del sobre */
-        .envelope-container {
-            perspective: 1000px;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-        
-        /* EL SOBRE - Dimensiones aumentadas */
-        .envelope {
-            position: relative;
-            width: 360px;  /* Más ancho */
-            height: 250px; /* Más alto */
-            background-color: #4a572c; /* Color sólido base */
-            margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border-radius: 4px;
-        }
+    // Element SDK initialization
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          const brandName = config.brand_name || defaultConfig.brand_name;
+          const heroTitle = config.hero_title || defaultConfig.hero_title;
+          const heroSubtitle = config.hero_subtitle || defaultConfig.hero_subtitle;
+          const aboutTitle = config.about_title || defaultConfig.about_title;
+          const aboutText = config.about_text || defaultConfig.about_text;
+          const contactPhone = config.contact_phone || defaultConfig.contact_phone;
+          const contactEmail = config.contact_email || defaultConfig.contact_email;
+          const bgColor = config.background_color || defaultConfig.background_color;
+          const surfaceColor = config.surface_color || defaultConfig.surface_color;
+          const textColor = config.text_color || defaultConfig.text_color;
+          const accentColor = config.accent_color || defaultConfig.accent_color;
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          const fontSize = config.font_size || defaultConfig.font_size;
 
-        /* Solapas laterales */
-        .envelope-left, .envelope-right {
-            position: absolute;
-            bottom: 0;
-            width: 0;
-            height: 0;
-            border-bottom: 125px solid transparent; /* Mitad de la altura */
-            border-top: 125px solid transparent;
-            z-index: 2;
-        }
-        .envelope-left {
-            left: 0;
-            border-left: 180px solid #536030; /* Mitad del ancho (360/2) */
-        }
-        .envelope-right {
-            right: 0;
-            border-right: 180px solid #536030;
-        }
+          // Update text content
+          document.getElementById('nav-brand').textContent = brandName;
+          document.getElementById('hero-title').innerHTML = heroTitle;
+          document.getElementById('hero-subtitle').textContent = heroSubtitle;
+          document.getElementById('about-title').textContent = aboutTitle;
+          document.getElementById('about-text').textContent = aboutText;
+          document.getElementById('contact-phone').textContent = contactPhone;
+          document.getElementById('contact-email').textContent = contactEmail;
+          document.getElementById('footer-brand').textContent = brandName;
 
-        /* Solapa inferior (bolsillo) */
-        .envelope-pocket {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 180px solid transparent;
-            border-right: 180px solid transparent;
-            border-bottom: 140px solid #606c38; /* Un poco más alto que la mitad */
-            z-index: 3;
-        }
+          // Update colors
+          document.getElementById('app').style.backgroundColor = bgColor;
+          document.getElementById('app').style.color = textColor;
 
-        /* Solapa superior (la que abre) */
-        .envelope-flap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 180px solid transparent;
-            border-right: 180px solid transparent;
-            border-top: 145px solid #718046; /* Ligeramente más claro */
-            transform-origin: top;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.8s;
-            z-index: 4;
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
-        }
+          // Update font
+          document.querySelectorAll('.font-display').forEach(el => {
+            el.style.fontFamily = `${fontFamily}, Georgia, serif`;
+          });
 
-        /* --- CARTA INTERIOR (Más grande y sin cortes) --- */
-        .letter {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%); /* Centrado horizontal */
-            width: 330px; /* Casi del ancho del sobre */
-            height: 230px; /* Casi del alto del sobre */
-            background-color: #fffbf0; /* Color crema sólido, sin transparencia */
-            border: 1px solid #d4c5a6;
-            padding: 20px 15px;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
-            z-index: 1;
-            box-shadow: 0 -5px 10px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Animación de apertura */
-        .open .envelope-flap {
-            transform: rotateX(180deg);
-            z-index: 0;
-        }
-        
-        .open .letter {
-            /* Sube la carta mucho más para que se lea todo */
-            transform: translate(-50%, -150px); 
-            z-index: 5;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .fade-out-screen {
-            animation: fadeOutScreen 1s ease-in-out forwards;
-            animation-delay: 2.5s; /* Espera más tiempo para leer */
-        }
-
-        @keyframes fadeOutScreen {
-            to { opacity: 0; visibility: hidden; }
-        }
-
-    </style>
-</head>
-<body>
-
-    <div id="root"></div>
-
-    <script type="text/babel">
-        const { useState, useEffect } = React;
-
-        // --- ICONOS ---
-        const IconChevronDown = ({ size, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m6 9 6 6 6-6"/></svg>;
-        const IconHeart = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>;
-        const IconMapPin = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>;
-        const IconCalendar = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>;
-        const IconGift = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>;
-        const IconNavigation = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>;
-        const IconCheckCircle = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>;
-        const IconSend = ({ size }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>;
-        const IconAlertCircle = ({ size }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>;
-        const IconLoader2 = ({ size, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>;
-        const IconUserCheck = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>;
-        const IconCamera = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>;
-
-        
-        // --- COMPONENTE SOBRE (Versión 3: Fondo Blanco) ---
-        const EnvelopeScreen = ({ onOpen }) => {
-            const [isOpen, setIsOpen] = useState(false);
-
-            const handleOpen = () => {
-                if (!isOpen) {
-                    setIsOpen(true);
-                    setTimeout(() => {
-                        onOpen();
-                    }, 3500);
-                }
-            };
-
-            return (
-                <div className={`fixed inset-0 envelope-screen-bg z-50 flex flex-col items-center justify-center p-4 transition-all duration-1000 ${isOpen ? 'fade-out-screen' : ''}`}>
-                    
-                    {/* Texto Superior */}
-                    <div className={`text-center mb-12 transition-all duration-700 transform ${isOpen ? 'opacity-0 -translate-y-10' : 'opacity-100 translate-y-0'}`}>
-                        <div className="text-olive uppercase tracking-widest text-xs font-bold mb-3 animate-pulse">Invitación de Boda</div>
-                        <h1 className="text-5xl md:text-7xl font-cinzel text-gray-800 tracking-wider drop-shadow-sm">
-                            Yazmin <span className="font-script text-gold text-6xl mx-2">&</span> David
-                        </h1>
-                        <div className="flex items-center justify-center gap-4 mt-6 text-gray-600 uppercase tracking-[0.2em] text-sm font-medium">
-                            <span>Enero 23</span>
-                            <span className="text-gold">•</span>
-                            <span>2027</span>
-                        </div>
-                    </div>
-
-                    {/* El Sobre Interactivo */}
-                    <div className="envelope-container" onClick={handleOpen}>
-                        <div className={`envelope ${isOpen ? 'open' : ''}`}>
-                            <div className="envelope-flap"></div>
-                            <div className="envelope-pocket"></div>
-                            <div className="envelope-left"></div>
-                            <div className="envelope-right"></div>
-                            
-                            {/* La carta interna */}
-                            <div className="letter">
-                                <p className="font-serif text-olive uppercase tracking-widest text-[10px] mb-2">Con amor</p>
-                                <h3 className="font-script text-5xl text-gray-800 mb-2">Yazmin & David</h3>
-                                <p className="text-gray-500 font-serif italic text-sm mb-4 leading-relaxed px-4">
-                                    "El amor no es solo mirarse el uno al otro, es mirar juntos en la misma dirección."
-                                </p>
-                                <div className="mt-2 flex flex-col items-center text-gold">
-                                    <span className="text-[9px] uppercase tracking-widest font-bold mb-1">Toca para entrar</span>
-                                    <IconChevronDown size={20} className="animate-bounce" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Texto de ayuda inferior */}
-                    <div className={`mt-16 text-gray-400 text-xs uppercase tracking-widest cursor-pointer hover:text-olive transition-colors ${isOpen ? 'opacity-0' : 'opacity-100'}`} onClick={handleOpen}>
-                        ( Haz clic en el sobre para abrir )
-                    </div>
-                </div>
-            );
-        };
-
-        // --- COMPONENTE PRINCIPAL ---
-        const WeddingApp = () => {
-            const [activeSection, setActiveSection] = useState('home');
-
-            // DATOS DE LA BODA
-            const weddingData = {
-                couple: "Yazmin & David",
-                date: "23 de Enero, 2027",
-                location: "Hacienda San Gabriel",
-                address: "Valle de Guadalupe, Baja California",
-                googleMapsLink: "https://maps.google.com", 
-                story: "Todo comenzó con un café que se convirtió en cena, y una cena que se convirtió en una vida juntos. Después de 5 años de risas, viajes y amor, queremos celebrar nuestro 'para siempre' con ustedes.",
-                dressCode: "Formal / Etiqueta Rigurosa",
-                schedule: [
-                    { time: "16:00", event: "Ceremonia Religiosa" },
-                    { time: "17:30", event: "Cóctel de Bienvenida" },
-                    { time: "19:00", event: "Cena y Brindis" },
-                    { time: "21:00", event: "¡Fiesta!" }
-                ]
-            };
-
-            const scrollToSection = (id) => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                    setActiveSection(id);
-                }
-            };
-
-            // --- SUB-COMPONENTES ---
-            const Countdown = () => {
-                const calculateTimeLeft = () => {
-                    const difference = +new Date("2027-01-23") - +new Date();
-                    let timeLeft = {};
-                    if (difference > 0) {
-                        timeLeft = {
-                            días: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                            horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                            min: Math.floor((difference / 1000 / 60) % 60),
-                            seg: Math.floor((difference / 1000) % 60),
-                        };
-                    }
-                    return timeLeft;
-                };
-                const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-                useEffect(() => {
-                    const timer = setTimeout(() => setTimeLeft(calculateTimeLeft()), 1000);
-                    return () => clearTimeout(timer);
-                });
-                return (
-                    <div className="flex justify-center gap-4 md:gap-8 py-8 text-gray-600">
-                        {Object.keys(timeLeft).map((interval) => (
-                            <div key={interval} className="flex flex-col items-center">
-                                <span className="text-3xl md:text-5xl font-serif font-bold text-black">{timeLeft[interval] || '0'}</span>
-                                <span className="text-xs md:text-sm uppercase tracking-widest mt-2">{interval}</span>
-                            </div>
-                        ))}
-                    </div>
-                );
-            };
-
-            const CalendarView = () => {
-                const daysOfWeek = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
-                const startDay = 5; 
-                const totalDays = 31;
-                const weddingDay = 23;
-                const days = [];
-                for (let i = 0; i < startDay; i++) days.push(null);
-                for (let i = 1; i <= totalDays; i++) days.push(i);
-                return (
-                    <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 max-w-sm mx-auto mt-12 relative overflow-hidden">
-                        <div className="absolute -top-10 -right-10 w-24 h-24 bg-olive/10 rounded-full blur-2xl"></div>
-                        <div className="text-center mb-6 border-b border-gray-100 pb-4">
-                            <h3 className="text-2xl font-serif text-gray-900 uppercase tracking-widest">Enero 2027</h3>
-                            <p className="text-olive text-sm font-bold tracking-widest mt-2 uppercase animate-pulse">¡El Gran Día!</p>
-                        </div>
-                        <div className="grid grid-cols-7 gap-2 text-center text-xs md:text-sm mb-4">
-                            {daysOfWeek.map(d => <div key={d} className="font-bold text-olive">{d}</div>)}
-                        </div>
-                        <div className="grid grid-cols-7 gap-2 text-center">
-                            {days.map((day, index) => {
-                                if (!day) return <div key={index}></div>;
-                                const isWeddingDay = day === weddingDay;
-                                return (
-                                    <div key={index} className="flex flex-col items-center justify-center h-10 w-10 mx-auto relative group">
-                                        <div className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 text-sm ${isWeddingDay ? 'bg-olive text-white font-bold scale-110 shadow-lg ring-2 ring-olive/30' : 'text-gray-600 hover:bg-gray-100'}`}>
-                                            {day}
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                );
-            };
-
-            const RsvpForm = () => {
-                const [formData, setFormData] = useState({ nombre: '', asistentes: '1 Persona', mensaje: '' });
-                const [status, setStatus] = useState('idle');
-                const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-                const handleSubmit = async (e) => {
-                    e.preventDefault();
-                    setStatus('sending');
-                    try {
-                        const response = await fetch("https://formsubmit.co/ajax/appleedavid@gmail.com", {
-                            method: "POST",
-                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                            body: JSON.stringify({
-                                _subject: `Nueva Confirmación Boda: ${formData.nombre}`,
-                                nombre: formData.nombre,
-                                asistentes: formData.asistentes,
-                                detalles: formData.mensaje,
-                                _template: "table"
-                            })
-                        });
-                        if (response.ok) { setStatus('success'); setFormData({ nombre: '', asistentes: '1 Persona', mensaje: '' }); } 
-                        else { setStatus('error'); }
-                    } catch (error) { setStatus('error'); }
-                };
-                if (status === 'success') {
-                    return (
-                        <div className="bg-green-50 p-8 rounded-lg text-center border border-green-200 animate-fade-in">
-                            <IconCheckCircle className="w-16 h-16 text-olive mx-auto mb-4" />
-                            <h3 className="text-2xl font-serif text-gray-900 mb-2">¡Gracias por confirmar!</h3>
-                            <p className="text-gray-700">Hemos recibido tus datos correctamente.</p>
-                            <button onClick={() => setStatus('idle')} className="mt-6 text-sm text-olive underline hover:text-black">Enviar otra confirmación</button>
-                        </div>
-                    );
-                }
-                return (
-                    <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-xl max-w-lg mx-auto border-t-4 border-olive">
-                        <h3 className="text-2xl font-serif text-center mb-6 text-gray-900">Confirmar Asistencia</h3>
-                        <div className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-medium text-gray-600 mb-1">Nombre Completo</label>
-                                <input required name="nombre" value={formData.nombre} onChange={handleChange} type="text" className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-black focus:border-black focus:outline-none transition-colors" placeholder="Ej. Juan Pérez" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-600 mb-1">Número de Asistentes</label>
-                                <select name="asistentes" value={formData.asistentes} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-black focus:border-black focus:outline-none bg-white">
-                                    <option>1 Persona</option>
-                                    <option>2 Personas</option>
-                                    <option>Familia (3)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-600 mb-1">Restricciones / Canción sugerida</label>
-                                <textarea name="mensaje" value={formData.mensaje} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-black focus:border-black focus:outline-none h-24" placeholder="¿Eres alérgico a algo?"></textarea>
-                            </div>
-                            {status === 'error' && <div className="bg-red-50 text-red-600 p-3 rounded text-sm flex items-center gap-2"><IconAlertCircle size={16} /> Hubo un error al enviar.</div>}
-                            <button type="submit" disabled={status === 'sending'} className="w-full bg-black text-white py-3 rounded hover:bg-olive transition-colors flex items-center justify-center gap-2 mt-4 font-medium tracking-wide disabled:opacity-70 disabled:cursor-not-allowed">
-                                {status === 'sending' ? <><IconLoader2 size={18} className="animate-spin" /> ENVIANDO...</> : <><IconSend size={18} /> ENVIAR CONFIRMACIÓN</>}
-                            </button>
-                        </div>
-                    </form>
-                );
-            };
-
-            return (
-                <div className="font-sans text-gray-900 bg-white min-h-screen selection:bg-gray-200 animate-fade-in">
-                    {/* Navegación */}
-                    <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-40 border-b border-gray-200 shadow-sm">
-                        <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-                            <div className="text-xl font-serif font-bold tracking-tighter cursor-pointer" onClick={() => scrollToSection('home')}>
-                                Y<span className="text-olive">&</span>D
-                            </div>
-                            <div className="hidden md:flex gap-8 text-sm font-medium tracking-widest text-gray-500">
-                                {['Historia', 'Fotos', 'Detalles', 'Itinerario', 'RSVP'].map((item) => (
-                                    <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="hover:text-black hover:text-olive transition-colors uppercase">
-                                        {item}
-                                    </button>
-                                ))}
-                            </div>
-                            <button onClick={() => scrollToSection('rsvp')} className="md:hidden bg-black text-white px-4 py-2 rounded text-xs tracking-widest uppercase">
-                                RSVP
-                            </button>
-                        </div>
-                    </nav>
-
-                    {/* Hero Section */}
-                    <section id="home" className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-                        <div className="absolute inset-0 z-0">
-                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Boda Fondo" className="w-full h-full object-cover grayscale"/>
-                            <div className="absolute inset-0 bg-black/40"></div>
-                        </div>
-                        <div className="relative z-10 text-white space-y-6 max-w-4xl mx-auto animate-fade-in-up">
-                            <p className="tracking-[0.3em] text-sm md:text-base uppercase font-medium">¡Nos Casamos!</p>
-                            <h1 className="text-6xl md:text-8xl font-serif font-medium leading-tight">{weddingData.couple}</h1>
-                            <div className="flex items-center justify-center gap-4 text-lg md:text-2xl font-light italic opacity-90">
-                                <span>{weddingData.date}</span>
-                                <span className="w-2 h-2 bg-olive rounded-full"></span>
-                                <span>{weddingData.location}</span>
-                            </div>
-                        </div>
-                        <div className="absolute bottom-10 animate-bounce text-white cursor-pointer" onClick={() => scrollToSection('historia')}>
-                            <IconChevronDown size={32} />
-                        </div>
-                    </section>
-
-                    {/* Historia */}
-                    <section id="historia" className="py-24 px-4 bg-white">
-                        <div className="max-w-3xl mx-auto text-center space-y-8">
-                            <IconHeart className="w-8 h-8 mx-auto text-olive" />
-                            <h2 className="text-3xl md:text-4xl font-serif text-black">Nuestra Historia</h2>
-                            <p className="text-lg text-gray-600 leading-relaxed italic">"{weddingData.story}"</p>
-                            <div className="pt-8">
-                                <h3 className="text-sm font-bold tracking-widest text-olive uppercase mb-6">Faltan para el gran día</h3>
-                                <Countdown />
-                            </div>
-                        </div>
-                    </section>
-                    
-                    {/* Galería de Fotos */}
-                    <section id="fotos" className="py-24 px-4 bg-gray-50">
-                        <div className="max-w-6xl mx-auto">
-                            <div className="text-center mb-12">
-                                <IconCamera className="w-10 h-10 mx-auto text-olive mb-4" />
-                                <h2 className="text-3xl md:text-4xl font-serif text-black">Nuestros Momentos</h2>
-                                <p className="text-gray-500 mt-2 font-light italic">Pequeños instantes de nuestra gran historia</p>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div className="group overflow-hidden rounded-lg shadow-sm"><img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?auto=format&fit=crop&w=800&q=80" alt="Pareja 1" className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" /></div>
-                                <div className="group overflow-hidden rounded-lg shadow-sm"><img src="https://images.unsplash.com/photo-1621621667797-e06afc217fb0?auto=format&fit=crop&w=800&q=80" alt="Anillos" className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" /></div>
-                                <div className="group overflow-hidden rounded-lg shadow-sm"><img src="https://images.unsplash.com/photo-1519225448526-72c6613c91ad?auto=format&fit=crop&w=800&q=80" alt="Caminando" className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" /></div>
-                                <div className="group overflow-hidden rounded-lg shadow-sm"><img src="https://images.unsplash.com/photo-1522673607200-1645062cd958?auto=format&fit=crop&w=800&q=80" alt="Abrazo" className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" /></div>
-                                <div className="group overflow-hidden rounded-lg shadow-sm"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Risas" className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" /></div>
-                                <div className="group overflow-hidden rounded-lg shadow-sm"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80" alt="Paisaje" className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" /></div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Detalles */}
-                    <section id="detalles" className="py-24 px-4 bg-white">
-                        <div className="max-w-5xl mx-auto">
-                            <h2 className="text-3xl md:text-4xl font-serif text-center mb-16">Detalles del Evento</h2>
-                            <div className="grid md:grid-cols-3 gap-8 text-center mb-16">
-                                <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border-t-2 border-transparent hover:border-olive">
-                                    <IconCalendar className="w-10 h-10 mx-auto text-olive mb-4" />
-                                    <h3 className="text-xl font-serif mb-2">Cuándo</h3>
-                                    <p className="text-gray-600">Sábado, 23 de Enero 2027</p>
-                                    <p className="text-gray-500 text-sm mt-2">4:00 PM</p>
-                                </div>
-                                <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border-t-2 border-transparent hover:border-olive">
-                                    <IconMapPin className="w-10 h-10 mx-auto text-olive mb-4" />
-                                    <h3 className="text-xl font-serif mb-2">Dónde</h3>
-                                    <p className="text-gray-600 font-medium">{weddingData.location}</p>
-                                    <p className="text-gray-500 text-sm mt-2">{weddingData.address}</p>
-                                    <a href={weddingData.googleMapsLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs uppercase font-bold text-olive hover:text-black mt-4 border-b border-olive pb-1">Ver Mapa <IconNavigation className="w-3 h-3" /></a>
-                                </div>
-                                <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow border-t-2 border-transparent hover:border-olive">
-                                    <IconUserCheck className="w-10 h-10 mx-auto text-olive mb-4" />
-                                    <h3 className="text-xl font-serif mb-2">Código de Vestimenta</h3>
-                                    <p className="text-gray-600">{weddingData.dressCode}</p>
-                                    <p className="text-gray-500 text-sm mt-2">Elegante pero cómodos</p>
-                                </div>
-                            </div>
-                            <CalendarView />
-                            
-                            {/* --- SECCIÓN DE PALETA DE COLORES MODIFICADA --- */}
-                            <div className="bg-white rounded-xl p-8 md:p-12 shadow-sm text-center max-w-3xl mx-auto border border-gray-100 mt-16">
-                                <h3 className="text-xl font-serif mb-8 text-gray-900">Paleta de Colores Sugerida</h3>
-                                {/* Se ajustó el gap para que quepan 4 elementos */}
-                                <div className="flex justify-center items-start gap-6 md:gap-12 flex-wrap">
-                                    
-                                    {/* 1. Gris Claro (Antes Negro) */}
-                                    <div className="group flex flex-col items-center">
-                                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-300 shadow-md border-2 border-gray-200 mb-3 transform group-hover:scale-105 transition-transform"></div>
-                                        <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Gris Claro</span>
-                                    </div>
-
-                                    {/* 2. Beige (Antes Blanco) - Usando hex code para un tono específico */}
-                                    <div className="group flex flex-col items-center">
-                                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full shadow-md border-2 border-gray-200 mb-3 transform group-hover:scale-105 transition-transform" style={{backgroundColor: '#e8e0d5'}}></div>
-                                        <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Beige</span>
-                                    </div>
-
-                                    {/* 3. Verde Olivo (Existente) */}
-                                    <div className="group flex flex-col items-center">
-                                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-olive shadow-md border-2 border-gray-200 mb-3 transform group-hover:scale-105 transition-transform"></div>
-                                        <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Verde Olivo</span>
-                                    </div>
-                                    
-                                    {/* 4. Azul Cielo (Nuevo) */}
-                                    <div className="group flex flex-col items-center">
-                                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-300 shadow-md border-2 border-gray-200 mb-3 transform group-hover:scale-105 transition-transform"></div>
-                                        <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Azul Cielo</span>
-                                    </div>
-
-                                </div>
-                                <p className="mt-8 text-gray-500 font-light text-sm italic">Agradecemos que tomen en cuenta estos tonos para las fotografías del evento.</p>
-                            </div>
-                            {/* --- FIN SECCIÓN DE PALETA DE COLORES --- */}
-
-                        </div>
-                    </section>
-
-                    {/* Itinerario */}
-                    <section id="itinerario" className="py-24 px-4 bg-white overflow-hidden">
-                        <div className="max-w-2xl mx-auto text-center">
-                            <h2 className="text-3xl md:text-4xl font-serif mb-12">Itinerario</h2>
-                            <div className="relative border-l-2 border-gray-200 ml-1/2 md:ml-0 md:mx-auto pl-8 md:pl-0 space-y-12 text-left md:text-center">
-                                {weddingData.schedule.map((item, index) => (
-                                    <div key={index} className="relative md:flex md:items-center md:justify-center group">
-                                        <div className="absolute -left-[39px] md:left-1/2 md:-ml-[9px] w-5 h-5 bg-white border-4 border-gray-300 rounded-full z-10 group-hover:border-olive transition-colors"></div>
-                                        <div className="md:w-1/2 md:text-right md:pr-12"><span className="text-2xl font-serif text-gray-900 block">{item.time}</span></div>
-                                        <div className="md:w-1/2 md:text-left md:pl-12"><span className="text-gray-500 uppercase tracking-widest text-sm font-medium">{item.event}</span></div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Mesa de Regalos */}
-                    <section className="py-16 px-4 bg-olive text-white text-center">
-                        <div className="max-w-2xl mx-auto">
-                            <IconGift className="w-12 h-12 mx-auto text-white/80 mb-6" />
-                            <h2 className="text-2xl font-serif text-white mb-4">Mesa de Regalos</h2>
-                            <p className="mb-8 font-light text-white/90">Su presencia es nuestro mejor regalo. Si desean tener un detalle con nosotros, hemos preparado una opción de lluvia de sobres o pueden visitar nuestra mesa de regalos.</p>
-                            <div className="flex flex-col md:flex-row justify-center gap-4">
-                                <button className="px-8 py-3 border border-white hover:bg-white hover:text-olive rounded transition-all uppercase text-sm tracking-widest font-bold">Ver Liverpool</button>
-                                <button className="px-8 py-3 border border-white hover:bg-white hover:text-olive rounded transition-all uppercase text-sm tracking-widest font-bold">Ver Amazon</button>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* RSVP */}
-                    <section id="rsvp" className="py-24 px-4 bg-gray-100 relative">
-                        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")'}}></div>
-                        <div className="max-w-xl mx-auto relative z-10">
-                            <div className="text-center mb-12">
-                                <h2 className="text-4xl font-serif text-gray-900 mb-4">Acompáñanos</h2>
-                                <p className="text-gray-600">Por favor confirma tu asistencia antes del 1 de Septiembre</p>
-                            </div>
-                            <RsvpForm />
-                        </div>
-                    </section>
-
-                    {/* Footer */}
-                    <footer className="bg-black text-white py-12 text-center">
-                        <h2 className="text-3xl font-serif mb-4">{weddingData.couple}</h2>
-                        <p className="text-gray-400 text-sm uppercase tracking-widest mb-4">#BodaYazmin&David2027</p>
-                        <p className="text-gray-600 text-xs">© 2027. Hecho con amor.</p>
-                    </footer>
-                </div>
-            );
-        };
-
-        // --- COMPONENTE ROOT ---
-        const App = () => {
-            const [showContent, setShowContent] = useState(false);
-
-            return (
-                <React.Fragment>
-                    {!showContent && <EnvelopeScreen onOpen={() => setShowContent(true)} />}
-                    {showContent && <WeddingApp />}
-                </React.Fragment>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+          // Update font size proportionally
+          document.getElementById('hero-title').style.fontSize = `${fontSize * 4}px`;
+          document.getElementById('hero-subtitle').style.fontSize = `${fontSize * 1.25}px`;
+          document.getElementById('about-title').style.fontSize = `${fontSize * 3}px`;
+          document.getElementById('about-text').style.fontSize = `${fontSize * 1.125}px`;
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['brand_name', config.brand_name || defaultConfig.brand_name],
+          ['hero_title', config.hero_title || defaultConfig.hero_title],
+          ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+          ['about_title', config.about_title || defaultConfig.about_title],
+          ['about_text', config.about_text || defaultConfig.about_text],
+          ['contact_phone', config.contact_phone || defaultConfig.contact_phone],
+          ['contact_email', config.contact_email || defaultConfig.contact_email]
+        ])
+      });
+    }
+  </script>
 </body>
 </html>
