@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es" class="h-full">
- <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Perfumes</title>
@@ -8,7 +8,7 @@
   <script src="/_sdk/element_sdk.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     html, body { height: 100%; margin: 0; }
     .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
@@ -39,652 +39,1078 @@
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full font-body">
+</head>
+<body class="h-full font-body">
   <div id="app" class="w-full h-full overflow-auto bg-white text-black">
-   
-   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-black/10">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-     <a href="#inicio" id="nav-brand" class="font-display text-2xl font-medium tracking-wider">ESSENCE</a>
-     <div class="hidden md:flex items-center gap-8">
-      <a href="#inicio" class="nav-link text-xs tracking-widest uppercase font-medium">Inicio</a> 
-      <a href="#coleccion" class="nav-link text-xs tracking-widest uppercase font-medium">Colección</a> 
-      <a href="#nosotros" class="nav-link text-xs tracking-widest uppercase font-medium">Nosotros</a> 
-      <a href="#contacto" class="nav-link text-xs tracking-widest uppercase font-medium">Contacto</a>
-     </div>
-     <button id="menu-toggle" class="md:hidden p-2">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" /></svg>
-     </button>
-    </div>
     
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/10">
-     <div class="px-6 py-4 space-y-4">
-      <a href="#inicio" class="block text-xs tracking-widest uppercase font-medium">Inicio</a> 
-      <a href="#coleccion" class="block text-xs tracking-widest uppercase font-medium">Colección</a> 
-      <a href="#nosotros" class="block text-xs tracking-widest uppercase font-medium">Nosotros</a> 
-      <a href="#contacto" class="block text-xs tracking-widest uppercase font-medium">Contacto</a>
-     </div>
-    </div>
-   </nav>
-
-   <section id="inicio" class="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-     <svg class="w-full h-full" viewbox="0 0 100 100" preserveaspectratio="none">
-      <defs>
-       <pattern id="grid" width="10" height="10" patternunits="userSpaceOnUse">
-        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.1" />
-       </pattern>
-      </defs> 
-      <rect width="100" height="100" fill="url(#grid)" />
-     </svg>
-    </div>
-    <div class="relative z-10 text-center px-6 max-w-4xl animate-fade-in">
-     <p class="text-xs tracking-[0.3em] uppercase mb-6 opacity-70">Fragancias Exclusivas</p>
-     <h1 id="hero-title" class="font-display text-5xl md:text-7xl lg:text-8xl font-light mb-6 leading-tight">El Arte de la<br>Perfumería</h1>
-     <p id="hero-subtitle" class="text-lg md:text-xl font-light opacity-80 max-w-2xl mx-auto mb-10">Descubre nuestra colección de fragancias únicas, creadas para quienes buscan la distinción y la elegancia.</p>
-     <a href="#coleccion" class="inline-block border border-white px-10 py-4 text-xs tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300"> Ver Colección </a>
-    </div>
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-    </div>
-   </section>
-
-   <section id="coleccion" class="py-24 px-4 md:px-6 bg-white">
-    <div class="max-w-7xl mx-auto">
-     <div class="text-center mb-12">
-      <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Nuestra Selección</p>
-      <h2 class="font-display text-4xl md:text-5xl font-light">Colección</h2>
-     </div>
-
-     <div class="flex justify-center gap-2 md:gap-4 mb-12 md:mb-16 pb-8 border-b border-black/10">
-       <button id="btn-dama" class="px-4 md:px-8 py-3 border border-black text-xs tracking-widest uppercase font-medium bg-black text-white transition-colors duration-300 w-36 md:w-40">
-         DAMA
-       </button>
-       <button id="btn-caballero" class="px-4 md:px-8 py-3 border border-black text-xs tracking-widest uppercase font-medium bg-white text-black hover:bg-neutral-100 transition-colors duration-300 w-36 md:w-40">
-         CABALLERO
-       </button>
-     </div>
-
-     <div id="section-dama" class="mb-20 block">
-      
-      <div class="mb-16 md:mb-20">
-       <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
-       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-        
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="20" y="30" width="40" height="70" rx="4" stroke="currentColor" stroke-width="1.5" /> <rect x="28" y="15" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5" /> <rect x="35" y="5" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1.5" /> <line x1="30" y1="50" x2="50" y2="50" stroke="currentColor" stroke-width="0.5" /> <text x="40" y="65" text-anchor="middle" class="text-[6px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Noir Élégant</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
-          <p class="font-medium text-sm md:text-base">€89</p>
-         </div>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-black/10">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#inicio" id="nav-brand" class="font-display text-2xl font-medium tracking-wider">LUXE ELIXIR</a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#inicio" class="nav-link text-xs tracking-widest uppercase font-medium">Inicio</a> 
+          <a href="#coleccion" class="nav-link text-xs tracking-widest uppercase font-medium">Colección</a> 
+          <a href="#nosotros" class="nav-link text-xs tracking-widest uppercase font-medium">Nosotros</a> 
+          <a href="#contacto" class="nav-link text-xs tracking-widest uppercase font-medium">Contacto</a>
         </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="70" rx="20" ry="30" stroke="currentColor" stroke-width="1.5" /> <path d="M35 40 L35 25 Q40 20 45 25 L45 40" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="75" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Blanc Mystère</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 75ml</p>
-          <p class="font-medium text-sm md:text-base">€75</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M25 100 L25 45 Q40 30 55 45 L55 100 Z" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="32" y="25" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="15" r="6" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="75" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Ombre Sensuelle</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Toilette · 50ml</p>
-          <p class="font-medium text-sm md:text-base">€65</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="22" y="35" width="36" height="65" rx="18" stroke="currentColor" stroke-width="1.5" /> <rect x="32" y="20" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5" /> <rect x="37" y="8" width="6" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Velours Nuit</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
-          <p class="font-medium text-sm md:text-base">€95</p>
-         </div>
-        </div>
-       </div>
-      </div>
-
-      <div class="mb-16 md:mb-20">
-       <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Árabes</h4>
-       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-        
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 20,50 40,35 60,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="20" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Cristal Absolu</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Parfum · 30ml</p>
-          <p class="font-medium text-sm md:text-base">€120</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="25" y="40" width="30" height="55" stroke="currentColor" stroke-width="1.5" /> <rect x="30" y="25" width="20" height="18" stroke="currentColor" stroke-width="1.5" /> <line x1="30" y1="32" x2="50" y2="32" stroke="currentColor" stroke-width="0.5" /> <rect x="37" y="12" width="6" height="15" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Soir d'Été</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 75ml</p>
-          <p class="font-medium text-sm md:text-base">€82</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="60" rx="18" ry="35" stroke="currentColor" stroke-width="1.5" /> <path d="M35 28 L40 15 L45 28" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="65" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Aura Dorada</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
-          <p class="font-medium text-sm md:text-base">€98</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M30 95 Q30 40 40 30 Q50 40 50 95" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="25" r="6" stroke="currentColor" stroke-width="1.5" /> <rect x="35" y="12" width="10" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Roseah Qamar</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 85ml</p>
-          <p class="font-medium text-sm md:text-base">€105</p>
-         </div>
-        </div>
-       </div>
-      </div>
-
-      <div>
-       <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Nicho</h4>
-       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-        
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><defs><pattern id="dots" x="0" y="0" width="8" height="8" patternunits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="currentColor" /></pattern></defs> <rect x="20" y="35" width="40" height="60" rx="6" stroke="currentColor" stroke-width="1.5" /> <rect x="28" y="18" width="24" height="18" rx="3" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Nicho Secreto</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Extrait de Parfum · 50ml</p>
-          <p class="font-medium text-sm md:text-base">€135</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="24" y="38" width="32" height="55" stroke="currentColor" stroke-width="1.5" /> <path d="M32 38 L28 25 Q40 18 52 25 L48 38" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="20" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Essência Rara</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 60ml</p>
-          <p class="font-medium text-sm md:text-base">€128</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 18,50 40,32 62,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="18" width="8" height="15" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="3.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Joya Perfumada</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 75ml</p>
-          <p class="font-medium text-sm md:text-base">€115</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M35 95 L35 45 Q40 30 45 45 L45 95" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="38" r="12" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="20" r="5" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="8" width="8" height="13" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Fragancia Etérea</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 55ml</p>
-          <p class="font-medium text-sm md:text-base">€140</p>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-
-     <div id="section-caballero" class="mb-20 hidden">
-      
-      <div class="mb-16 md:mb-20">
-       <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
-       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-        
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="18" y="32" width="44" height="68" stroke="currentColor" stroke-width="1.5" /> <rect x="26" y="16" width="28" height="18" stroke="currentColor" stroke-width="1.5" /> <rect x="34" y="4" width="12" height="14" stroke="currentColor" stroke-width="1.5" /> <line x1="28" y1="48" x2="52" y2="48" stroke="currentColor" stroke-width="0.5" /> <text x="40" y="70" text-anchor="middle" class="text-[6px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Acero Intenso</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Toilette · 100ml</p>
-          <p class="font-medium text-sm md:text-base">€85</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M30 100 L30 48 L25 30 L40 25 L55 30 L50 48 L50 100" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="12" width="10" height="16" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="8" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Vigor Oscuro</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 90ml</p>
-          <p class="font-medium text-sm md:text-base">€92</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="22" y="34" width="36" height="64" rx="3" stroke="currentColor" stroke-width="1.5" /> <polygon points="40,20 32,28 48,28" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="10" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Esencia Fuerte</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Toilette · 75ml</p>
-          <p class="font-medium text-sm md:text-base">€78</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="65" rx="22" ry="32" stroke="currentColor" stroke-width="1.5" /> <path d="M35 32 L40 20 L45 32" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="25" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Poder Absoluto</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
-          <p class="font-medium text-sm md:text-base">€99</p>
-         </div>
-        </div>
-       </div>
-      </div>
-
-      <div class="mb-16 md:mb-20">
-       <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Árabes</h4>
-       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-        
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M25 100 Q25 55 40 38 Q55 55 55 100" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="22" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="16" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Oudh Supremo</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 85ml</p>
-          <p class="font-medium text-sm md:text-base">€110</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 20,45 40,30 60,45" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="5" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="10" width="8" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Ambar Legendario</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 90ml</p>
-          <p class="font-medium text-sm md:text-base">€118</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="24" y="36" width="32" height="60" rx="4" stroke="currentColor" stroke-width="1.5" /> <path d="M32 36 L28 22 Q40 15 52 22 L48 36" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Nobleza Árabe</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 80ml</p>
-          <p class="font-medium text-sm md:text-base">€112</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M32 98 L32 42 L28 28 L40 22 L52 28 L48 42 L48 98" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="4" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="8" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Sharqi Imperial</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 95ml</p>
-          <p class="font-medium text-sm md:text-base">€125</p>
-         </div>
-        </div>
-       </div>
-      </div>
-
-      <div>
-       <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Nicho</h4>
-       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-        
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="20" y="34" width="40" height="63" rx="5" stroke="currentColor" stroke-width="1.5" /> <path d="M28 34 L32 20 Q40 15 48 20 L52 34" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="17" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Firma Élite</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Extrait de Parfum · 50ml</p>
-          <p class="font-medium text-sm md:text-base">€145</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><circle cx="40" cy="65" r="25" stroke="currentColor" stroke-width="1.5" /> <path d="M36 40 L40 28 L44 40" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="33" r="3.5" stroke="currentColor" stroke-width="1.5" /> <rect x="37" y="16" width="6" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Espíritu Crudo</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 65ml</p>
-          <p class="font-medium text-sm md:text-base">€138</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,95 18,50 28,30 40,25 52,30 62,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="14" width="8" height="13" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="10" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Rareza Singular</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 70ml</p>
-          <p class="font-medium text-sm md:text-base">€150</p>
-         </div>
-        </div>
-
-        <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
-         <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
-          <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
-           <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="23" y="35" width="34" height="62" stroke="currentColor" stroke-width="1.5" /> <path d="M30 35 Q30 20 40 15 Q50 20 50 35" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">ESSENCE</text></svg>
-          </div>
-          <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
-           <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-          </div>
-         </div>
-         <div class="text-center px-1 overflow-hidden">
-          <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Legado Perfecto</h5>
-          <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 60ml</p>
-          <p class="font-medium text-sm md:text-base">€155</p>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-
-    </div>
-   </section>
-
-   <section id="nosotros" class="py-24 px-6 bg-black text-white">
-    <div class="max-w-6xl mx-auto">
-     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <div>
-       <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Nuestra Historia</p>
-       <h2 id="about-title" class="font-display text-4xl md:text-5xl font-light mb-8">Sobre Nosotros</h2>
-       <p id="about-text" class="text-lg font-light leading-relaxed opacity-80 mb-8">Desde 2010, nos dedicamos a crear fragancias únicas que cuentan historias. Cada perfume es una obra de arte, elaborada con los ingredientes más selectos de todo el mundo. Nuestra pasión por la perfumería nos impulsa a buscar la excelencia en cada nota, cada acorde, cada creación.</p>
-       <div class="grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-white/20 text-center md:text-left">
-        <div>
-         <p class="font-display text-3xl md:text-4xl mb-2">14+</p>
-         <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60">Años de Experiencia</p>
-        </div>
-        <div>
-         <p class="font-display text-3xl md:text-4xl mb-2">50+</p>
-         <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60">Fragancias Únicas</p>
-        </div>
-        <div>
-         <p class="font-display text-3xl md:text-4xl mb-2">10K+</p>
-         <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60">Clientes Felices</p>
-        </div>
-       </div>
-      </div>
-      <div class="relative hidden lg:block">
-       <div class="aspect-square bg-white/5 flex items-center justify-center">
-        <svg class="w-48 h-48 text-white/30" viewbox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="0.5" /> <circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="0.5" /> <circle cx="50" cy="50" r="25" stroke="currentColor" stroke-width="0.5" /> <path d="M50 5 L50 95 M5 50 L95 50" stroke="currentColor" stroke-width="0.3" /> <text x="50" y="52" text-anchor="middle" class="text-[8px] font-display" fill="currentColor">ESSENCE</text></svg>
-       </div>
-       <div class="absolute -bottom-6 -right-6 w-32 h-32 border border-white/20"></div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <section class="py-24 px-6 bg-neutral-50">
-    <div class="max-w-6xl mx-auto">
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <div class="text-center">
-       <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
-       </div>
-       <h3 class="font-display text-xl mb-3">Ingredientes Premium</h3>
-       <p class="text-sm opacity-70 leading-relaxed">Seleccionamos las materias primas más exclusivas de los mejores proveedores del mundo.</p>
-      </div>
-      <div class="text-center">
-       <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
-       </div>
-       <h3 class="font-display text-xl mb-3">Envío Exclusivo</h3>
-       <p class="text-sm opacity-70 leading-relaxed">Cada pedido se empaqueta con el máximo cuidado y elegancia que merece.</p>
-      </div>
-      <div class="text-center">
-       <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-       </div>
-       <h3 class="font-display text-xl mb-3">Creaciones Únicas</h3>
-       <p class="text-sm opacity-70 leading-relaxed">Fragancias diseñadas para expresar tu personalidad única e irrepetible.</p>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <section id="contacto" class="py-24 px-6 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-     <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Hablemos</p>
-     <h2 class="font-display text-4xl md:text-5xl font-light mb-8">Contacto</h2>
-     <p class="text-lg opacity-70 mb-12 max-w-2xl mx-auto">¿Tienes preguntas sobre nuestras fragancias? Estamos aquí para ayudarte a encontrar tu aroma perfecto.</p>
-     
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-      <div class="p-8 border border-black/10 hover:border-black/30 transition-colors">
-       <svg class="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-       <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Teléfono</p>
-       <p id="contact-phone" class="font-display text-xl">+34 912 345 678</p>
+        <button id="menu-toggle" class="md:hidden p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
       </div>
       
-      <div class="p-8 border border-black/10 hover:border-black/30 transition-colors">
-       <svg class="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-       <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Email</p>
-       <p id="contact-email" class="font-display text-xl">info@essence.com</p>
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/10">
+        <div class="px-6 py-4 space-y-4">
+          <a href="#inicio" class="block text-xs tracking-widest uppercase font-medium">Inicio</a> 
+          <a href="#coleccion" class="block text-xs tracking-widest uppercase font-medium">Colección</a> 
+          <a href="#nosotros" class="block text-xs tracking-widest uppercase font-medium">Nosotros</a> 
+          <a href="#contacto" class="block text-xs tracking-widest uppercase font-medium">Contacto</a>
+        </div>
       </div>
-      
-      <a href="https://www.instagram.com/luxe_eelixir?igsh=MWduMHNodndxdm8zcg==" target="_blank" rel="noopener noreferrer" class="p-8 border border-black/10 hover:border-black/30 transition-colors block group cursor-pointer">
-       <svg class="w-8 h-8 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.5"></rect>
-         <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke-width="1.5"></path>
-         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2.5" stroke-linecap="round"></line>
+    </nav>
+
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-20">
+        <svg class="w-full h-full" viewbox="0 0 100 100" preserveaspectratio="none">
+          <defs>
+            <pattern id="grid" width="10" height="10" patternunits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.1" />
+            </pattern>
+          </defs> 
+          <rect width="100" height="100" fill="url(#grid)" />
+        </svg>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-4xl animate-fade-in">
+        <p class="text-xs tracking-[0.3em] uppercase mb-6 opacity-70">Fragancias Exclusivas</p>
+        <h1 id="hero-title" class="font-display text-5xl md:text-7xl lg:text-8xl font-light mb-6 leading-tight">El Arte de la<br>Perfumería</h1>
+        <p id="hero-subtitle" class="text-lg md:text-xl font-light opacity-80 max-w-2xl mx-auto mb-10">Descubre nuestra colección de fragancias únicas, creadas para quienes buscan la distinción y la elegancia.</p>
+        <a href="#coleccion" class="inline-block border border-white px-10 py-4 text-xs tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300"> Ver Colección </a>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+      </div>
+    </section>
+
+    <section id="coleccion" class="py-24 px-4 md:px-6 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Nuestra Selección</p>
+          <h2 class="font-display text-4xl md:text-5xl font-light">Colección</h2>
+        </div>
+
+        <div class="flex justify-center gap-2 md:gap-4 mb-12 md:mb-16 pb-8 border-b border-black/10">
+          <button id="btn-dama" class="px-4 md:px-8 py-3 border border-black text-xs tracking-widest uppercase font-medium bg-black text-white transition-colors duration-300 w-36 md:w-40">
+            DAMA
+          </button>
+          <button id="btn-caballero" class="px-4 md:px-8 py-3 border border-black text-xs tracking-widest uppercase font-medium bg-white text-black hover:bg-neutral-100 transition-colors duration-300 w-36 md:w-40">
+            CABALLERO
+          </button>
+        </div>
+
+        <div id="section-dama" class="mb-20 block">
+          
+          <div id="dama-page-1" class="block">
+            <div class="mb-16 md:mb-20">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="20" y="30" width="40" height="70" rx="4" stroke="currentColor" stroke-width="1.5" /> <rect x="28" y="15" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5" /> <rect x="35" y="5" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1.5" /> <line x1="30" y1="50" x2="50" y2="50" stroke="currentColor" stroke-width="0.5" /> <text x="40" y="65" text-anchor="middle" class="text-[6px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Noir Élégant</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€89</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="70" rx="20" ry="30" stroke="currentColor" stroke-width="1.5" /> <path d="M35 40 L35 25 Q40 20 45 25 L45 40" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="75" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Blanc Mystère</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 75ml</p>
+                    <p class="font-medium text-sm md:text-base">€75</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M25 100 L25 45 Q40 30 55 45 L55 100 Z" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="32" y="25" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="15" r="6" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="75" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Ombre Sensuelle</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Toilette · 50ml</p>
+                    <p class="font-medium text-sm md:text-base">€65</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="22" y="35" width="36" height="65" rx="18" stroke="currentColor" stroke-width="1.5" /> <rect x="32" y="20" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5" /> <rect x="37" y="8" width="6" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Velours Nuit</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€95</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-16 md:mb-20">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Árabes</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 20,50 40,35 60,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="20" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Cristal Absolu</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Parfum · 30ml</p>
+                    <p class="font-medium text-sm md:text-base">€120</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="25" y="40" width="30" height="55" stroke="currentColor" stroke-width="1.5" /> <rect x="30" y="25" width="20" height="18" stroke="currentColor" stroke-width="1.5" /> <line x1="30" y1="32" x2="50" y2="32" stroke="currentColor" stroke-width="0.5" /> <rect x="37" y="12" width="6" height="15" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Soir d'Été</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 75ml</p>
+                    <p class="font-medium text-sm md:text-base">€82</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="60" rx="18" ry="35" stroke="currentColor" stroke-width="1.5" /> <path d="M35 28 L40 15 L45 28" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="65" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Aura Dorada</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€98</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M30 95 Q30 40 40 30 Q50 40 50 95" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="25" r="6" stroke="currentColor" stroke-width="1.5" /> <rect x="35" y="12" width="10" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Roseah Qamar</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 85ml</p>
+                    <p class="font-medium text-sm md:text-base">€105</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Nicho</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><defs><pattern id="dots" x="0" y="0" width="8" height="8" patternunits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="currentColor" /></pattern></defs> <rect x="20" y="35" width="40" height="60" rx="6" stroke="currentColor" stroke-width="1.5" /> <rect x="28" y="18" width="24" height="18" rx="3" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Nicho Secreto</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Extrait de Parfum · 50ml</p>
+                    <p class="font-medium text-sm md:text-base">€135</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="24" y="38" width="32" height="55" stroke="currentColor" stroke-width="1.5" /> <path d="M32 38 L28 25 Q40 18 52 25 L48 38" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="20" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Essência Rara</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 60ml</p>
+                    <p class="font-medium text-sm md:text-base">€128</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 18,50 40,32 62,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="18" width="8" height="15" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="3.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Joya Perfumada</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 75ml</p>
+                    <p class="font-medium text-sm md:text-base">€115</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M35 95 L35 45 Q40 30 45 45 L45 95" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="38" r="12" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="20" r="5" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="8" width="8" height="13" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Fragancia Etérea</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 55ml</p>
+                    <p class="font-medium text-sm md:text-base">€140</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <div id="dama-page-2" class="hidden">
+            <div class="mb-16 md:mb-20">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="20" y="30" width="40" height="70" rx="4" stroke="currentColor" stroke-width="1.5" /> <rect x="28" y="15" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5" /> <rect x="35" y="5" width="10" height="12" rx="1" stroke="currentColor" stroke-width="1.5" /> <line x1="30" y1="50" x2="50" y2="50" stroke="currentColor" stroke-width="0.5" /> <text x="40" y="65" text-anchor="middle" class="text-[6px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Jardín Oculto</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€92</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="70" rx="20" ry="30" stroke="currentColor" stroke-width="1.5" /> <path d="M35 40 L35 25 Q40 20 45 25 L45 40" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="75" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Luna Plateada</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Toilette · 75ml</p>
+                    <p class="font-medium text-sm md:text-base">€68</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M25 100 L25 45 Q40 30 55 45 L55 100 Z" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="32" y="25" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="15" r="6" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="75" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Corazón Rubí</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 50ml</p>
+                    <p class="font-medium text-sm md:text-base">€85</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="22" y="35" width="36" height="65" rx="18" stroke="currentColor" stroke-width="1.5" /> <rect x="32" y="20" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.5" /> <rect x="37" y="8" width="6" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Vainilla Suave</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€105</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-16 md:mb-20">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Árabes</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 20,50 40,35 60,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="20" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Sáhara Místico</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Parfum · 30ml</p>
+                    <p class="font-medium text-sm md:text-base">€130</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="25" y="40" width="30" height="55" stroke="currentColor" stroke-width="1.5" /> <rect x="30" y="25" width="20" height="18" stroke="currentColor" stroke-width="1.5" /> <line x1="30" y1="32" x2="50" y2="32" stroke="currentColor" stroke-width="0.5" /> <rect x="37" y="12" width="6" height="15" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Noche de Dubai</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 75ml</p>
+                    <p class="font-medium text-sm md:text-base">€89</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="60" rx="18" ry="35" stroke="currentColor" stroke-width="1.5" /> <path d="M35 28 L40 15 L45 28" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="65" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Jazmín Real</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€115</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M30 95 Q30 40 40 30 Q50 40 50 95" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="25" r="6" stroke="currentColor" stroke-width="1.5" /> <rect x="35" y="12" width="10" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Oasis Dorado</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 85ml</p>
+                    <p class="font-medium text-sm md:text-base">€110</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Nicho</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><defs><pattern id="dots" x="0" y="0" width="8" height="8" patternunits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="currentColor" /></pattern></defs> <rect x="20" y="35" width="40" height="60" rx="6" stroke="currentColor" stroke-width="1.5" /> <rect x="28" y="18" width="24" height="18" rx="3" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Arte Botánico</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Extrait de Parfum · 50ml</p>
+                    <p class="font-medium text-sm md:text-base">€145</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="24" y="38" width="32" height="55" stroke="currentColor" stroke-width="1.5" /> <path d="M32 38 L28 25 Q40 18 52 25 L48 38" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="20" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Pétalos de Seda</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 60ml</p>
+                    <p class="font-medium text-sm md:text-base">€138</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 18,50 40,32 62,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="18" width="8" height="15" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="12" r="3.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Elixir Cítrico</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 75ml</p>
+                    <p class="font-medium text-sm md:text-base">€125</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M35 95 L35 45 Q40 30 45 45 L45 95" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="38" r="12" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="20" r="5" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="8" width="8" height="13" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Madera Blanca</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 55ml</p>
+                    <p class="font-medium text-sm md:text-base">€150</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <div class="flex justify-center gap-3 mt-12">
+            <button id="btn-dama-p1" class="w-10 h-10 border border-black bg-black text-white flex items-center justify-center text-sm transition-colors hover:bg-black hover:text-white">1</button>
+            <button id="btn-dama-p2" class="w-10 h-10 border border-black bg-white text-black flex items-center justify-center text-sm transition-colors hover:bg-neutral-100">2</button>
+          </div>
+
+        </div> <div id="section-caballero" class="mb-20 hidden">
+          
+          <div id="caballero-page-1" class="block">
+            <div class="mb-16 md:mb-20">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="18" y="32" width="44" height="68" stroke="currentColor" stroke-width="1.5" /> <rect x="26" y="16" width="28" height="18" stroke="currentColor" stroke-width="1.5" /> <rect x="34" y="4" width="12" height="14" stroke="currentColor" stroke-width="1.5" /> <line x1="28" y1="48" x2="52" y2="48" stroke="currentColor" stroke-width="0.5" /> <text x="40" y="70" text-anchor="middle" class="text-[6px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Acero Intenso</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Toilette · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€85</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M30 100 L30 48 L25 30 L40 25 L55 30 L50 48 L50 100" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="12" width="10" height="16" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="8" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Vigor Oscuro</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 90ml</p>
+                    <p class="font-medium text-sm md:text-base">€92</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="22" y="34" width="36" height="64" rx="3" stroke="currentColor" stroke-width="1.5" /> <polygon points="40,20 32,28 48,28" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="10" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Esencia Fuerte</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Toilette · 75ml</p>
+                    <p class="font-medium text-sm md:text-base">€78</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="65" rx="22" ry="32" stroke="currentColor" stroke-width="1.5" /> <path d="M35 32 L40 20 L45 32" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="25" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Poder Absoluto</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€99</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-16 md:mb-20">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Árabes</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M25 100 Q25 55 40 38 Q55 55 55 100" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="22" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="16" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Oudh Supremo</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 85ml</p>
+                    <p class="font-medium text-sm md:text-base">€110</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 20,45 40,30 60,45" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="5" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="10" width="8" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Ambar Legendario</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 90ml</p>
+                    <p class="font-medium text-sm md:text-base">€118</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="24" y="36" width="32" height="60" rx="4" stroke="currentColor" stroke-width="1.5" /> <path d="M32 36 L28 22 Q40 15 52 22 L48 36" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Nobleza Árabe</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 80ml</p>
+                    <p class="font-medium text-sm md:text-base">€112</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M32 98 L32 42 L28 28 L40 22 L52 28 L48 42 L48 98" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="4" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="8" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Sharqi Imperial</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 95ml</p>
+                    <p class="font-medium text-sm md:text-base">€125</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Nicho</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="20" y="34" width="40" height="63" rx="5" stroke="currentColor" stroke-width="1.5" /> <path d="M28 34 L32 20 Q40 15 48 20 L52 34" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="17" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Firma Élite</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Extrait de Parfum · 50ml</p>
+                    <p class="font-medium text-sm md:text-base">€145</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><circle cx="40" cy="65" r="25" stroke="currentColor" stroke-width="1.5" /> <path d="M36 40 L40 28 L44 40" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="33" r="3.5" stroke="currentColor" stroke-width="1.5" /> <rect x="37" y="16" width="6" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Espíritu Crudo</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 65ml</p>
+                    <p class="font-medium text-sm md:text-base">€138</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,95 18,50 28,30 40,25 52,30 62,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="14" width="8" height="13" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="10" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Rareza Singular</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 70ml</p>
+                    <p class="font-medium text-sm md:text-base">€150</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="23" y="35" width="34" height="62" stroke="currentColor" stroke-width="1.5" /> <path d="M30 35 Q30 20 40 15 Q50 20 50 35" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Legado Perfecto</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 60ml</p>
+                    <p class="font-medium text-sm md:text-base">€155</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <div id="caballero-page-2" class="hidden">
+            <div class="mb-16 md:mb-20">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="18" y="32" width="44" height="68" stroke="currentColor" stroke-width="1.5" /> <rect x="26" y="16" width="28" height="18" stroke="currentColor" stroke-width="1.5" /> <rect x="34" y="4" width="12" height="14" stroke="currentColor" stroke-width="1.5" /> <line x1="28" y1="48" x2="52" y2="48" stroke="currentColor" stroke-width="0.5" /> <text x="40" y="70" text-anchor="middle" class="text-[6px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Madera Noble</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€95</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M30 100 L30 48 L25 30 L40 25 L55 30 L50 48 L50 100" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="12" width="10" height="16" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="8" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Cuero Salvaje</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 90ml</p>
+                    <p class="font-medium text-sm md:text-base">€102</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="22" y="34" width="36" height="64" rx="3" stroke="currentColor" stroke-width="1.5" /> <polygon points="40,20 32,28 48,28" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="10" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Tabaco Fino</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Toilette · 75ml</p>
+                    <p class="font-medium text-sm md:text-base">€88</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><ellipse cx="40" cy="65" rx="22" ry="32" stroke="currentColor" stroke-width="1.5" /> <path d="M35 32 L40 20 L45 32" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="25" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Océano Profundo</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 100ml</p>
+                    <p class="font-medium text-sm md:text-base">€108</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-16 md:mb-20">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Árabes</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M25 100 Q25 55 40 38 Q55 55 55 100" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="35" y="22" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="16" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Sultán Oscuro</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 85ml</p>
+                    <p class="font-medium text-sm md:text-base">€120</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,100 20,45 40,30 60,45" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="5" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="10" width="8" height="14" rx="2" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Desierto Infinito</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 90ml</p>
+                    <p class="font-medium text-sm md:text-base">€125</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="24" y="36" width="32" height="60" rx="4" stroke="currentColor" stroke-width="1.5" /> <path d="M32 36 L28 22 Q40 15 52 22 L48 36" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Oro Negro</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 80ml</p>
+                    <p class="font-medium text-sm md:text-base">€115</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><path d="M32 98 L32 42 L28 28 L40 22 L52 28 L48 42 L48 98" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="18" r="4" stroke="currentColor" stroke-width="1.5" /> <rect x="36" y="8" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Especias Reales</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 95ml</p>
+                    <p class="font-medium text-sm md:text-base">€130</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <h4 class="text-[10px] md:text-xs tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-60 text-center">Perfumes Nicho</h4>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="20" y="34" width="40" height="63" rx="5" stroke="currentColor" stroke-width="1.5" /> <path d="M28 34 L32 20 Q40 15 48 20 L52 34" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="17" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Vetiver Crudo</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Extrait de Parfum · 50ml</p>
+                    <p class="font-medium text-sm md:text-base">€150</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-1" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><circle cx="40" cy="65" r="25" stroke="currentColor" stroke-width="1.5" /> <path d="M36 40 L40 28 L44 40" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="33" r="3.5" stroke="currentColor" stroke-width="1.5" /> <rect x="37" y="16" width="6" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="70" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Raíces Antiguas</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 65ml</p>
+                    <p class="font-medium text-sm md:text-base">€142</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-2" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><polygon points="40,95 18,50 28,30 40,25 52,30 62,50" stroke="currentColor" stroke-width="1.5" fill="none" /> <rect x="36" y="14" width="8" height="13" rx="2" stroke="currentColor" stroke-width="1.5" /> <circle cx="40" cy="10" r="3" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="68" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Humo de Roble</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 70ml</p>
+                    <p class="font-medium text-sm md:text-base">€158</p>
+                  </div>
+                </div>
+
+                <div class="product-card group cursor-pointer animate-fade-in animate-delay-3" style="opacity: 0;">
+                  <div class="relative aspect-[3/4] bg-neutral-100 overflow-hidden mb-3 md:mb-6">
+                    <div class="product-image w-full h-full transition-transform duration-700 flex items-center justify-center">
+                      <svg class="w-20 h-32 md:w-32 md:h-48 text-black/80" viewbox="0 0 80 120" fill="none"><rect x="23" y="35" width="34" height="62" stroke="currentColor" stroke-width="1.5" /> <path d="M30 35 Q30 20 40 15 Q50 20 50 35" stroke="currentColor" stroke-width="1.5" fill="none" /> <circle cx="40" cy="22" r="4" stroke="currentColor" stroke-width="1.5" /> <text x="40" y="72" text-anchor="middle" class="text-[5px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+                    </div>
+                    <div class="product-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center hidden md:flex">
+                      <span class="text-white text-xs tracking-widest uppercase border border-white px-6 py-3 hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
+                    </div>
+                  </div>
+                  <div class="text-center px-1 overflow-hidden">
+                    <h5 class="font-display text-base md:text-xl mb-1 md:mb-2 truncate">Absoluto de Cedro</h5>
+                    <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-1 md:mb-3 truncate">Eau de Parfum · 60ml</p>
+                    <p class="font-medium text-sm md:text-base">€160</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <div class="flex justify-center gap-3 mt-12">
+            <button id="btn-caballero-p1" class="w-10 h-10 border border-black bg-black text-white flex items-center justify-center text-sm transition-colors hover:bg-black hover:text-white">1</button>
+            <button id="btn-caballero-p2" class="w-10 h-10 border border-black bg-white text-black flex items-center justify-center text-sm transition-colors hover:bg-neutral-100">2</button>
+          </div>
+
+        </div> </div>
+    </section>
+
+    <section id="nosotros" class="py-24 px-6 bg-black text-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Nuestra Historia</p>
+            <h2 id="about-title" class="font-display text-4xl md:text-5xl font-light mb-8">Sobre Nosotros</h2>
+            <p id="about-text" class="text-lg font-light leading-relaxed opacity-80 mb-8">Desde 2010, nos dedicamos a crear fragancias únicas que cuentan historias. Cada perfume es una obra de arte, elaborada con los ingredientes más selectos de todo el mundo. Nuestra pasión por la perfumería nos impulsa a buscar la excelencia en cada nota, cada acorde, cada creación.</p>
+            <div class="grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-white/20 text-center md:text-left">
+              <div>
+                <p class="font-display text-3xl md:text-4xl mb-2">14+</p>
+                <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60">Años de Experiencia</p>
+              </div>
+              <div>
+                <p class="font-display text-3xl md:text-4xl mb-2">50+</p>
+                <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60">Fragancias Únicas</p>
+              </div>
+              <div>
+                <p class="font-display text-3xl md:text-4xl mb-2">10K+</p>
+                <p class="text-[10px] md:text-xs tracking-wider uppercase opacity-60">Clientes Felices</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative hidden lg:block">
+            <div class="aspect-square bg-white/5 flex items-center justify-center">
+              <svg class="w-48 h-48 text-white/30" viewbox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="0.5" /> <circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="0.5" /> <circle cx="50" cy="50" r="25" stroke="currentColor" stroke-width="0.5" /> <path d="M50 5 L50 95 M5 50 L95 50" stroke="currentColor" stroke-width="0.3" /> <text x="50" y="52" text-anchor="middle" class="text-[8px] font-display" fill="currentColor">LUXE ELIXIR</text></svg>
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 border border-white/20"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-6 bg-neutral-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+            </div>
+            <h3 class="font-display text-xl mb-3">Ingredientes Premium</h3>
+            <p class="text-sm opacity-70 leading-relaxed">Seleccionamos las materias primas más exclusivas de los mejores proveedores del mundo.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
+            </div>
+            <h3 class="font-display text-xl mb-3">Envío Exclusivo</h3>
+            <p class="text-sm opacity-70 leading-relaxed">Cada pedido se empaqueta con el máximo cuidado y elegancia que merece.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+            </div>
+            <h3 class="font-display text-xl mb-3">Creaciones Únicas</h3>
+            <p class="text-sm opacity-70 leading-relaxed">Fragancias diseñadas para expresar tu personalidad única e irrepetible.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-24 px-6 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Hablemos</p>
+        <h2 class="font-display text-4xl md:text-5xl font-light mb-8">Contacto</h2>
+        <p class="text-lg opacity-70 mb-12 max-w-2xl mx-auto">¿Tienes preguntas sobre nuestras fragancias? Estamos aquí para ayudarte a encontrar tu aroma perfecto.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="p-8 border border-black/10 hover:border-black/30 transition-colors">
+            <svg class="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Teléfono</p>
+            <p id="contact-phone" class="font-display text-xl">+34 912 345 678</p>
+          </div>
+          
+          <div class="p-8 border border-black/10 hover:border-black/30 transition-colors">
+            <svg class="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Email</p>
+            <p id="contact-email" class="font-display text-xl">info@luxeelixir.com</p>
+          </div>
+          
+          <a href="https://www.instagram.com/luxe_eelixir?igsh=MWduMHNodndxdm8zcg==" target="_blank" rel="noopener noreferrer" class="p-8 border border-black/10 hover:border-black/30 transition-colors block group cursor-pointer">
+            <svg class="w-8 h-8 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke-width="1.5"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2.5" stroke-linecap="round"></line>
+            </svg>
+            <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Instagram</p>
+            <p class="font-display text-xl">@luxe_eelixir</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-12 px-6 bg-black text-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <p id="footer-brand" class="font-display text-2xl tracking-wider">LUXE ELIXIR</p>
+          <p class="text-xs opacity-60">© 2024 Luxe Elixir Perfumes. Todos los derechos reservados.</p>
+          <div class="flex gap-6">
+            <a href="#" class="text-xs opacity-60 hover:opacity-100 transition-opacity">Privacidad</a> 
+            <a href="#" class="text-xs opacity-60 hover:opacity-100 transition-opacity">Términos</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/529631584080?text=Hola,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20perfumes." 
+       target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-[90] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:bg-[#128C7E] hover:-translate-y-1 hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+       aria-label="Contactar por WhatsApp">
+       <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
        </svg>
-       <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Instagram</p>
-       <p class="font-display text-xl">@luxe_eelixir</p>
-      </a>
-     </div>
+    </a>
 
-    </div>
-   </section>
-
-   <footer class="py-12 px-6 bg-black text-white">
-    <div class="max-w-6xl mx-auto">
-     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <p id="footer-brand" class="font-display text-2xl tracking-wider">ESSENCE</p>
-      <p class="text-xs opacity-60">© 2024 Essence Perfumes. Todos los derechos reservados.</p>
-      <div class="flex gap-6">
-       <a href="#" class="text-xs opacity-60 hover:opacity-100 transition-opacity">Privacidad</a> 
-       <a href="#" class="text-xs opacity-60 hover:opacity-100 transition-opacity">Términos</a>
+    <div id="perfume-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300 px-4 py-8">
+      <div class="bg-white text-black max-w-3xl w-full mx-auto p-6 md:p-12 relative transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto shadow-2xl rounded-sm" id="modal-content">
+        <button id="close-modal" class="absolute top-2 right-2 md:top-4 md:right-4 text-black/50 hover:text-black transition-colors p-2 z-10 bg-white/80 rounded-full md:bg-transparent">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center mt-4 md:mt-0">
+          <div id="modal-image" class="aspect-[3/4] md:aspect-[3/4] w-2/3 md:w-full mx-auto bg-neutral-100 flex items-center justify-center overflow-hidden">
+          </div>
+          
+          <div class="text-center md:text-left">
+            <p id="modal-category" class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-2"></p>
+            <h3 id="modal-title" class="font-display text-3xl md:text-4xl mb-3 md:mb-4"></h3>
+            <p id="modal-price" class="font-medium text-xl md:text-2xl mb-4 md:mb-6"></p>
+            <p class="text-sm opacity-70 mb-0 leading-relaxed max-w-sm mx-auto md:mx-0">
+              Una fragancia exquisita diseñada para despertar los sentidos. 
+              Combina notas superiores frescas con un corazón profundo y una 
+              base duradera que deja una estela inolvidable. Perfecta para cualquier ocasión.
+            </p>
+          </div>
+        </div>
       </div>
-     </div>
     </div>
-   </footer>
-
-   <a href="https://wa.me/529631584080?text=Hola,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20perfumes." 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      class="fixed bottom-6 right-6 z-[90] bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:bg-[#128C7E] hover:-translate-y-1 hover:scale-110 transition-all duration-300 flex items-center justify-center group"
-      aria-label="Contactar por WhatsApp">
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-      </svg>
-   </a>
-
-   <div id="perfume-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300 px-4 py-8">
-     <div class="bg-white text-black max-w-3xl w-full mx-auto p-6 md:p-12 relative transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto shadow-2xl rounded-sm" id="modal-content">
-       <button id="close-modal" class="absolute top-2 right-2 md:top-4 md:right-4 text-black/50 hover:text-black transition-colors p-2 z-10 bg-white/80 rounded-full md:bg-transparent">
-         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-       </button>
-       
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center mt-4 md:mt-0">
-         <div id="modal-image" class="aspect-[3/4] md:aspect-[3/4] w-2/3 md:w-full mx-auto bg-neutral-100 flex items-center justify-center overflow-hidden">
-         </div>
-         
-         <div class="text-center md:text-left">
-           <p id="modal-category" class="text-[10px] md:text-xs tracking-wider uppercase opacity-60 mb-2"></p>
-           <h3 id="modal-title" class="font-display text-3xl md:text-4xl mb-3 md:mb-4"></h3>
-           <p id="modal-price" class="font-medium text-xl md:text-2xl mb-4 md:mb-6"></p>
-           <p class="text-sm opacity-70 mb-0 leading-relaxed max-w-sm mx-auto md:mx-0">
-             Una fragancia exquisita diseñada para despertar los sentidos. 
-             Combina notas superiores frescas con un corazón profundo y una 
-             base duradera que deja una estela inolvidable. Perfecta para cualquier ocasión.
-           </p>
-         </div>
-       </div>
-     </div>
-   </div>
 
   </div>
 
   <script>
     const defaultConfig = {
-      brand_name: 'ESSENCE',
+      brand_name: 'LUXE ELIXIR',
       hero_title: 'El Arte de la<br>Perfumería',
       hero_subtitle: 'Descubre nuestra colección de fragancias únicas, creadas para quienes buscan la distinción y la elegancia.',
       about_title: 'Sobre Nosotros',
       about_text: 'Desde 2010, nos dedicamos a crear fragancias únicas que cuentan historias. Cada perfume es una obra de arte, elaborada con los ingredientes más selectos de todo el mundo. Nuestra pasión por la perfumería nos impulsa a buscar la excelencia en cada nota, cada acorde, cada creación.',
       contact_phone: '+34 912 345 678',
-      contact_email: 'info@essence.com',
+      contact_email: 'info@luxeelixir.com',
       background_color: '#ffffff',
       surface_color: '#000000',
       text_color: '#000000',
@@ -720,7 +1146,7 @@
     });
 
     // ==========================================
-    // Lógica de Pestañas (Tabs) Dama/Caballero
+    // Lógica de Pestañas Principales (Dama/Caballero)
     // ==========================================
     const btnDama = document.getElementById('btn-dama');
     const btnCaballero = document.getElementById('btn-caballero');
@@ -752,6 +1178,71 @@
       btnDama.classList.add('bg-white', 'text-black', 'hover:bg-neutral-100');
       btnDama.classList.remove('bg-black', 'text-white');
     });
+
+    // ==========================================
+    // Lógica de Paginación Interna (Pestañas 1 y 2)
+    // ==========================================
+    
+    // Controles Dama
+    const btnDamaP1 = document.getElementById('btn-dama-p1');
+    const btnDamaP2 = document.getElementById('btn-dama-p2');
+    const damaPage1 = document.getElementById('dama-page-1');
+    const damaPage2 = document.getElementById('dama-page-2');
+
+    btnDamaP1.addEventListener('click', () => {
+      damaPage1.classList.remove('hidden');
+      damaPage1.classList.add('block');
+      damaPage2.classList.add('hidden');
+      damaPage2.classList.remove('block');
+      
+      btnDamaP1.classList.add('bg-black', 'text-white');
+      btnDamaP1.classList.remove('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnDamaP2.classList.add('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnDamaP2.classList.remove('bg-black', 'text-white');
+    });
+
+    btnDamaP2.addEventListener('click', () => {
+      damaPage2.classList.remove('hidden');
+      damaPage2.classList.add('block');
+      damaPage1.classList.add('hidden');
+      damaPage1.classList.remove('block');
+      
+      btnDamaP2.classList.add('bg-black', 'text-white');
+      btnDamaP2.classList.remove('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnDamaP1.classList.add('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnDamaP1.classList.remove('bg-black', 'text-white');
+    });
+
+    // Controles Caballero
+    const btnCaballeroP1 = document.getElementById('btn-caballero-p1');
+    const btnCaballeroP2 = document.getElementById('btn-caballero-p2');
+    const caballeroPage1 = document.getElementById('caballero-page-1');
+    const caballeroPage2 = document.getElementById('caballero-page-2');
+
+    btnCaballeroP1.addEventListener('click', () => {
+      caballeroPage1.classList.remove('hidden');
+      caballeroPage1.classList.add('block');
+      caballeroPage2.classList.add('hidden');
+      caballeroPage2.classList.remove('block');
+      
+      btnCaballeroP1.classList.add('bg-black', 'text-white');
+      btnCaballeroP1.classList.remove('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnCaballeroP2.classList.add('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnCaballeroP2.classList.remove('bg-black', 'text-white');
+    });
+
+    btnCaballeroP2.addEventListener('click', () => {
+      caballeroPage2.classList.remove('hidden');
+      caballeroPage2.classList.add('block');
+      caballeroPage1.classList.add('hidden');
+      caballeroPage1.classList.remove('block');
+      
+      btnCaballeroP2.classList.add('bg-black', 'text-white');
+      btnCaballeroP2.classList.remove('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnCaballeroP1.classList.add('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnCaballeroP1.classList.remove('bg-black', 'text-white');
+    });
+
     // ==========================================
 
     // Lógica del Modal
