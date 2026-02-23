@@ -590,18 +590,31 @@
      <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Hablemos</p>
      <h2 class="font-display text-4xl md:text-5xl font-light mb-8">Contacto</h2>
      <p class="text-lg opacity-70 mb-12 max-w-2xl mx-auto">¿Tienes preguntas sobre nuestras fragancias? Estamos aquí para ayudarte a encontrar tu aroma perfecto.</p>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+     
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
       <div class="p-8 border border-black/10 hover:border-black/30 transition-colors">
        <svg class="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
        <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Teléfono</p>
        <p id="contact-phone" class="font-display text-xl">+34 912 345 678</p>
       </div>
+      
       <div class="p-8 border border-black/10 hover:border-black/30 transition-colors">
        <svg class="w-8 h-8 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
        <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Email</p>
        <p id="contact-email" class="font-display text-xl">info@essence.com</p>
       </div>
+      
+      <a href="https://www.instagram.com/luxe_eelixir?igsh=MWduMHNodndxdm8zcg==" target="_blank" rel="noopener noreferrer" class="p-8 border border-black/10 hover:border-black/30 transition-colors block group cursor-pointer">
+       <svg class="w-8 h-8 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.5"></rect>
+         <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke-width="1.5"></path>
+         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2.5" stroke-linecap="round"></line>
+       </svg>
+       <p class="text-xs tracking-wider uppercase opacity-60 mb-2">Instagram</p>
+       <p class="font-display text-xl">@luxe_eelixir</p>
+      </a>
      </div>
+
     </div>
    </section>
 
@@ -630,7 +643,6 @@
 
    <div id="perfume-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300 px-4 py-8">
      <div class="bg-white text-black max-w-3xl w-full mx-auto p-6 md:p-12 relative transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto shadow-2xl rounded-sm" id="modal-content">
-       
        <button id="close-modal" class="absolute top-2 right-2 md:top-4 md:right-4 text-black/50 hover:text-black transition-colors p-2 z-10 bg-white/80 rounded-full md:bg-transparent">
          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
        </button>
@@ -652,7 +664,8 @@
        </div>
      </div>
    </div>
-   </div>
+
+  </div>
 
   <script>
     const defaultConfig = {
@@ -671,20 +684,17 @@
       font_size: 16
     };
 
-    // Mobile menu toggle
     document.getElementById('menu-toggle').addEventListener('click', function() {
       const mobileMenu = document.getElementById('mobile-menu');
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Close mobile menu on link click
     document.querySelectorAll('#mobile-menu a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('mobile-menu').classList.add('hidden');
       });
     });
 
-    // Intersection Observer for animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -697,32 +707,23 @@
       observer.observe(el);
     });
 
-    // ==========================================
-    // Lógica del Modal Adaptado
-    // ==========================================
     const modal = document.getElementById('perfume-modal');
     const modalContent = document.getElementById('modal-content');
     const closeModalBtn = document.getElementById('close-modal');
     
-    // Función para abrir el modal con los datos
     function openModal(title, category, price, imageHTML) {
       document.getElementById('modal-title').textContent = title;
       document.getElementById('modal-category').textContent = category;
       document.getElementById('modal-price').textContent = price;
       
-      // Inyectamos la imagen/SVG
       document.getElementById('modal-image').innerHTML = imageHTML;
       
-      // Hacemos que la imagen se adapte perfectamente al espacio asignado en el modal
       const svg = document.querySelector('#modal-image svg');
       if(svg) {
-        // Quitamos anchos fijos de la tarjeta original
         svg.classList.remove('w-32', 'h-48', 'text-black/80'); 
-        // Agregamos clases para que se vea bien tanto en móvil como en escritorio
         svg.classList.add('w-full', 'h-full', 'max-h-56', 'md:max-h-72', 'text-black', 'p-4'); 
       }
 
-      // Mostrar modal y bloquear el scroll del fondo (opcional pero recomendado para móvil)
       document.body.style.overflow = 'hidden';
       
       modal.classList.remove('hidden');
@@ -735,13 +736,11 @@
       }, 10);
     }
 
-    // Función para cerrar el modal
     function closeModal() {
       modal.classList.add('opacity-0');
       modalContent.classList.remove('scale-100');
       modalContent.classList.add('scale-95');
       
-      // Restaurar el scroll del fondo
       document.body.style.overflow = '';
       
       setTimeout(() => {
@@ -750,7 +749,6 @@
       }, 300); 
     }
 
-    // AHORA TODA LA TARJETA ES CLICKEABLE (Mejor para móviles)
     document.querySelectorAll('.product-card').forEach(card => {
       card.addEventListener('click', (e) => {
         const title = card.querySelector('h5').textContent;
@@ -762,18 +760,14 @@
       });
     });
 
-    // Eventos para cerrar el modal
     closeModalBtn.addEventListener('click', closeModal);
     
     modal.addEventListener('click', (e) => {
-      // Cierra solo si tocas el fondo oscuro
       if (e.target === modal) {
         closeModal();
       }
     });
 
-
-    // Element SDK initialization
     if (window.elementSdk) {
       window.elementSdk.init({
         defaultConfig,
@@ -792,7 +786,6 @@
           const fontFamily = config.font_family || defaultConfig.font_family;
           const fontSize = config.font_size || defaultConfig.font_size;
 
-          // Update text content
           document.getElementById('nav-brand').textContent = brandName;
           document.getElementById('hero-title').innerHTML = heroTitle;
           document.getElementById('hero-subtitle').textContent = heroSubtitle;
@@ -802,16 +795,13 @@
           document.getElementById('contact-email').textContent = contactEmail;
           document.getElementById('footer-brand').textContent = brandName;
 
-          // Update colors
           document.getElementById('app').style.backgroundColor = bgColor;
           document.getElementById('app').style.color = textColor;
 
-          // Update font
           document.querySelectorAll('.font-display').forEach(el => {
             el.style.fontFamily = `${fontFamily}, Georgia, serif`;
           });
 
-          // Update font size proportionally
           document.getElementById('hero-title').style.fontSize = `${fontSize * 4}px`;
           document.getElementById('hero-subtitle').style.fontSize = `${fontSize * 1.25}px`;
           document.getElementById('about-title').style.fontSize = `${fontSize * 3}px`;
