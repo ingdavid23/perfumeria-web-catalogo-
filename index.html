@@ -91,13 +91,20 @@
 
    <section id="coleccion" class="py-24 px-6 bg-white">
     <div class="max-w-7xl mx-auto">
-     <div class="text-center mb-20">
+     <div class="text-center mb-12">
       <p class="text-xs tracking-[0.3em] uppercase mb-4 opacity-60">Nuestra Selección</p>
       <h2 class="font-display text-4xl md:text-5xl font-light">Colección</h2>
      </div>
 
-     <div class="mb-32">
-      <h3 id="women_title" class="font-display text-3xl md:text-4xl font-light text-center mb-16 pb-8 border-b border-black/10">Perfumes para Dama</h3>
+     <div class="flex justify-center gap-4 mb-16 pb-8 border-b border-black/10">
+       <button id="btn-dama" class="px-8 py-3 border border-black text-xs tracking-widest uppercase font-medium bg-black text-white transition-colors duration-300 w-40">
+         DAMA
+       </button>
+       <button id="btn-caballero" class="px-8 py-3 border border-black text-xs tracking-widest uppercase font-medium bg-white text-black hover:bg-neutral-100 transition-colors duration-300 w-40">
+         CABALLERO
+       </button>
+     </div>
+     <div id="section-dama" class="mb-20 block">
       
       <div class="mb-20">
        <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
@@ -239,7 +246,7 @@
        </div>
       </div>
 
-      <div class="mb-20">
+      <div>
        <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes Nicho</h4>
        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
@@ -310,8 +317,7 @@
       </div>
      </div>
 
-     <div>
-      <h3 id="men_title" class="font-display text-3xl md:text-4xl font-light text-center mb-16 pb-8 border-b border-black/10">Perfumes para Caballero</h3>
+     <div id="section-caballero" class="mb-20 hidden">
       
       <div class="mb-20">
        <h4 class="text-xs tracking-[0.3em] uppercase mb-8 opacity-60 text-center">Perfumes de Diseñador</h4>
@@ -522,6 +528,7 @@
        </div>
       </div>
      </div>
+
     </div>
    </section>
 
@@ -684,17 +691,20 @@
       font_size: 16
     };
 
+    // Mobile menu toggle
     document.getElementById('menu-toggle').addEventListener('click', function() {
       const mobileMenu = document.getElementById('mobile-menu');
       mobileMenu.classList.toggle('hidden');
     });
 
+    // Close mobile menu on link click
     document.querySelectorAll('#mobile-menu a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('mobile-menu').classList.add('hidden');
       });
     });
 
+    // Intersection Observer for animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -707,6 +717,46 @@
       observer.observe(el);
     });
 
+    // ==========================================
+    // Lógica de Pestañas (Tabs) Dama/Caballero
+    // ==========================================
+    const btnDama = document.getElementById('btn-dama');
+    const btnCaballero = document.getElementById('btn-caballero');
+    const sectionDama = document.getElementById('section-dama');
+    const sectionCaballero = document.getElementById('section-caballero');
+
+    btnDama.addEventListener('click', () => {
+      // Mostrar Dama, Ocultar Caballero
+      sectionDama.classList.remove('hidden');
+      sectionDama.classList.add('block');
+      sectionCaballero.classList.add('hidden');
+      sectionCaballero.classList.remove('block');
+
+      // Actualizar estilos visuales del botón activo
+      btnDama.classList.add('bg-black', 'text-white');
+      btnDama.classList.remove('bg-white', 'text-black', 'hover:bg-neutral-100');
+      
+      btnCaballero.classList.add('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnCaballero.classList.remove('bg-black', 'text-white');
+    });
+
+    btnCaballero.addEventListener('click', () => {
+      // Mostrar Caballero, Ocultar Dama
+      sectionCaballero.classList.remove('hidden');
+      sectionCaballero.classList.add('block');
+      sectionDama.classList.add('hidden');
+      sectionDama.classList.remove('block');
+
+      // Actualizar estilos visuales del botón activo
+      btnCaballero.classList.add('bg-black', 'text-white');
+      btnCaballero.classList.remove('bg-white', 'text-black', 'hover:bg-neutral-100');
+      
+      btnDama.classList.add('bg-white', 'text-black', 'hover:bg-neutral-100');
+      btnDama.classList.remove('bg-black', 'text-white');
+    });
+    // ==========================================
+
+    // Lógica del Modal
     const modal = document.getElementById('perfume-modal');
     const modalContent = document.getElementById('modal-content');
     const closeModalBtn = document.getElementById('close-modal');
