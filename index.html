@@ -1635,7 +1635,7 @@ const firebaseConfig = {
               <p class="text-amber-600 text-sm uppercase tracking-widest mb-2">Lo Más Vendido</p>
               <h2 class="font-display text-3xl md:text-4xl font-semibold">Productos Destacados</h2>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-8">
               ${products.slice(0, 6).map((product, index) => renderProductCard(product, index)).join('')}
             </div>
             <div class="text-center mt-12">
@@ -1675,22 +1675,24 @@ const firebaseConfig = {
       const bgStyle = product.bgColor ? `style="background-color: ${product.bgColor};"` : '';
 
       return `
-        <div class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden fade-in group">
+        <div class="card-hover bg-white border border-gray-100 rounded-2xl overflow-hidden fade-in group flex flex-col h-full">
           <button onclick="openProductModal(${index})" class="w-full">
-            <div class="${bgClass} p-6 aspect-square flex items-center justify-center overflow-hidden" ${bgStyle}>
-              <div class="transform scale-125 group-hover:scale-[1.35] transition-transform duration-500 drop-shadow-lg">
+            <div class="${bgClass} p-3 md:p-6 aspect-square flex items-center justify-center overflow-hidden" ${bgStyle}>
+              <div class="transform scale-90 md:scale-125 group-hover:scale-105 md:group-hover:scale-[1.35] transition-transform duration-500 drop-shadow-lg">
                 ${renderProductImage(product, index, 'lg')}
               </div>
             </div>
           </button>
-          <div class="p-6">
-            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">${product.brand}</p>
-            <h3 class="font-display text-lg font-semibold mb-2 truncate">${product.name || product.productName}</h3>
-            <p class="text-sm text-gray-600 mb-3 line-clamp-2">${product.description}</p>
-            <div class="flex items-center justify-between">
-              <span class="text-lg font-semibold">${formatPrice(product.price)}</span>
+          <div class="p-3 md:p-6 flex flex-col flex-grow">
+            <p class="text-[10px] md:text-xs text-gray-500 uppercase tracking-wider mb-1">${product.brand}</p>
+            <h3 class="font-display text-sm md:text-lg font-semibold mb-1 md:mb-2 truncate">${product.name || product.productName}</h3>
+            
+            <p class="hidden md:block text-sm text-gray-600 mb-3 line-clamp-2">${product.description}</p>
+            
+            <div class="mt-auto pt-2 flex flex-col xl:flex-row xl:items-center justify-between gap-2">
+              <span class="text-sm md:text-lg font-semibold">${formatPrice(product.price)}</span>
               <button onclick="event.stopPropagation(); addToCart(${index});" 
-                class="btn-primary px-4 py-2 rounded-lg text-sm">
+                class="btn-primary w-full xl:w-auto px-2 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm">
                 Agregar
               </button>
             </div>
@@ -1735,7 +1737,7 @@ const firebaseConfig = {
                 <button onclick="setCategoryFilter('todos')" class="mt-4 text-black underline">Ver todos los productos</button>
               </div>
             ` : `
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-6">
                 ${productsToRender.map(product => renderProductCard(product, product.originalIndex)).join('')}
               </div>
             `}
