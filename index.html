@@ -357,17 +357,22 @@
     // ==================== SDK Initialization ====================
     const dataHandler = {
       onDataChanged(data) {
+        // 1. Clasificamos la información entrante en tiempo real
         appData.products = data.filter(d => d.type === 'product');
         appData.users = data.filter(d => d.type === 'user');
         appData.orders = data.filter(d => d.type === 'order');
         appData.cartItems = data.filter(d => d.type === 'cartItem');
         appData.categories = data.filter(d => d.type === 'category'); 
         
-        const settingsDoc = data.find(d => d.type === 'settings');
+        // 2. SOLUCIÓN AL ERROR DE DISEÑO: Obtenemos SIEMPRE la configuración más reciente
+        const settingsDocs = data.filter(d => d.type === 'settings');
+        const settingsDoc = settingsDocs.pop(); // Toma el último archivo guardado para evitar leer clones viejos
+        
         if (settingsDoc) {
           siteSettings = { ...siteSettings, ...settingsDoc };
         }
         
+        // 3. Actualizamos el carrito del usuario activo
         if (currentUser) {
           const userCartItems = appData.cartItems.filter(item => item.userId === currentUser.__backendId);
           cart = userCartItems.map(item => ({
@@ -377,10 +382,21 @@
         }
         
         isLoading = false;
-        renderCurrentView();
+        
+        // 4. SOLUCIÓN AL ERROR DE SINCRONIZACIÓN: 
+        // Redibujamos la pantalla en tiempo real SOLO si el usuario no está en el panel admin.
+        // (Si redibujamos el panel admin mientras tú escribes, se te borraría el texto).
+        if (currentView !== 'admin') {
+          renderCurrentView();
+        } else if (currentAdminTab === 'orders' || currentAdminTab === 'history') {
+          // Si el admin está viendo pedidos, sí refrescamos esa pestaña específica para ver nuevas ventas
+          switchAdminTab(currentAdminTab);
+        }
+        
+        // 5. Refrescamos elementos globales (Burbuja del carrito, menú y colores)
         updateCartCount();
         updateUserDropdown();
-        applyTheme(); // <-- Aplicamos el diseño general
+        applyTheme(); 
       }
     };
     function getProductFromSample(productId) {
