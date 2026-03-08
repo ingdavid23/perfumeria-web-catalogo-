@@ -117,110 +117,153 @@
     ::-webkit-scrollbar-thumb:hover { background: #999; }
   </style>
   <style>body { box-sizing: border-box; }</style>
- </head>
- <body class="h-full bg-white text-gray-900">
-  <div id="app" class="h-full flex flex-col overflow-auto"><div id="toast-container" class="fixed top-4 right-4 z-50 flex flex-col gap-2"></div><header id="main-header" class="bg-white border-b border-gray-100 sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-     <div class="flex items-center justify-between">
-      <div class="flex items-center gap-2 cursor-pointer" onclick="navigateTo('home')">
-       <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center"><span class="text-white font-display text-lg font-bold">G</span>
-       </div>
-       <div>
-        <h1 id="header-store-name" class="font-display text-xl font-semibold tracking-wide">Luxe Elixir</h1>
-        <p class="text-xs text-gray-500 tracking-widest uppercase">Fragancias Originales</p>
-       </div>
-      </div>
-      <nav class="hidden md:flex items-center gap-8"><button onclick="navigateTo('home')" class="nav-link text-sm tracking-wide">Inicio</button> <button onclick="navigateTo('catalog')" class="nav-link text-sm tracking-wide">Catálogo</button> <button onclick="navigateTo('about')" class="nav-link text-sm tracking-wide">Nosotros</button>
-      </nav>
-      <div class="flex items-center gap-4"><button onclick="openCart()" class="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-        </svg><span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-black text-white text-xs rounded-full flex items-center justify-center hidden">0</span> </button>
-       <div id="user-menu" class="relative"><button id="user-btn" onclick="toggleUserMenu()" class="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-full transition-colors">
-         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-         </svg></button>
-        <div id="user-dropdown" class="hidden absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2"></div>
-       </div><button onclick="toggleMobileMenu()" class="md:hidden p-2 hover:bg-gray-100 rounded-full">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-        </svg></button>
-      </div>
-     </div><div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
-      <nav class="flex flex-col gap-3"><button onclick="navigateTo('home')" class="text-left py-2 text-sm tracking-wide">Inicio</button> <button onclick="navigateTo('catalog')" class="text-left py-2 text-sm tracking-wide">Catálogo</button> <button onclick="navigateTo('about')" class="text-left py-2 text-sm tracking-wide">Nosotros</button>
-      </nav>
-     </div>
-    </div>
-   </header><main id="main-content" class="flex-1"></main><footer id="main-footer" class="bg-black text-white py-12">
-    <div class="max-w-7xl mx-auto px-4">
-     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-       <div class="flex items-center gap-2 mb-4">
-        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center"><span class="text-black font-display text-sm font-bold">G</span>
-        </div><span id="footer-store-name" class="font-display text-lg">luxe Elixir</span>
-       </div>
-       <p id="footer-tagline" class="text-gray-400 text-sm">Fragancias originales para momentos únicos</p>
-      </div>
-      <div>
-       <h4 class="font-semibold mb-4">Enlaces</h4>
-       <div class="flex flex-col gap-2 text-sm text-gray-400"><button onclick="navigateTo('home')" class="text-left hover:text-white transition-colors">Inicio</button> <button onclick="navigateTo('catalog')" class="text-left hover:text-white transition-colors">Catálogo</button> <button onclick="navigateTo('about')" class="text-left hover:text-white transition-colors">Nosotros</button>
-       </div>
-      </div>
-      <div>
-       <h4 class="font-semibold mb-4">Contacto</h4>
-       <div class="flex flex-col gap-2 text-sm text-gray-400">
-        <p>📧 info@perfumeriagyg.com</p>
-        <p>📞 +52 963-224-2273</p>
-        <p>📍 Comitan Chiapas</p>
-       </div>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-4">Síguenos</h4>
-        <div class="flex gap-4">
-          <a href="https://wa.me/529632242273?text=Hola! Me gustaría solicitar Apoyo con más modelos o pedir más informes sobre sus productos." target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer text-white no-underline">
-            <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor">
-              <path d="M12.004 0C5.374 0 0 5.373 0 12c0 2.13.566 4.191 1.637 6.004L.078 24.015l6.096-1.579C7.942 23.472 9.945 24 12.004 24 18.634 24 24 18.627 24 12c0-6.627-5.366-12-11.996-12zm.006 21.826c-1.928 0-3.812-.49-5.46-1.417l-.391-.223-3.601.933.957-3.46-.248-.389A9.824 9.824 0 012.18 12c0-5.418 4.41-9.826 9.83-9.826 5.417 0 9.826 4.408 9.826 9.826 0 5.42-4.409 9.826-9.826 9.826zM17.47 15.65c-.328-.163-1.94-.954-2.24-1.064-.299-.109-.517-.163-.733.163s-.841 1.064-1.031 1.282c-.19.218-.38.245-.708.082-.328-.163-1.385-.511-2.639-1.631-1.127-1.006-1.89-2.251-2.112-2.632-.218-.38-.024-.587.163-.749.163-.163.38-.463.57-.696.19-.233.25-.38.38-.632.129-.251.065-.463-.032-.696-.097-.233-.733-1.782-1.004-2.417-.265-.632-.51-.546-.733-.546h-.696c-.233 0-.604.082-.92.463-.316.38-1.21 1.182-1.21 2.887 0 1.706 1.246 3.353 1.417 3.571.17.218 2.449 3.737 5.923 5.232.827.355 1.474.566 1.98.729.83.265 1.587.228 2.186.136.671-.101 1.94-.79 2.21-1.55.272-.76.272-1.417.19-1.55-.082-.136-.299-.218-.626-.381z"/>
-            </svg>
-          </a>
+  <body class="h-full bg-white text-gray-900">
+    <div id="app" class="h-full flex flex-col overflow-auto">
+      <div id="toast-container" class="fixed top-4 right-4 z-50 flex flex-col gap-2"></div>
+      <header id="main-header" class="bg-white border-b border-gray-100 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="navigateTo('home')">
+              <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                <span class="text-white font-display text-lg font-bold">L</span>
+              </div>
+              <div>
+                <h1 id="header-store-name" class="font-display text-xl font-semibold tracking-wide">Luxe Elixir</h1>
+                <p class="text-xs text-gray-500 tracking-widest uppercase">Fragancias Originales</p>
+              </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+              <button onclick="navigateTo('home')" class="nav-link text-sm tracking-wide">Inicio</button>
+              <button onclick="navigateTo('catalog')" class="nav-link text-sm tracking-wide">Catálogo</button>
+              <button onclick="navigateTo('about')" class="nav-link text-sm tracking-wide">Nosotros</button>
+            </nav>
+            <div class="flex items-center gap-4">
+              <button onclick="openCart()" class="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-black text-white text-xs rounded-full flex items-center justify-center hidden">0</span>
+              </button>
+              <div id="user-menu" class="relative">
+                <button id="user-btn" onclick="toggleUserMenu()" class="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-full transition-colors">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </button>
+                <div id="user-dropdown" class="hidden absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2"></div>
+              </div>
+              <button onclick="toggleMobileMenu()" class="md:hidden p-2 hover:bg-gray-100 rounded-full">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+            <nav class="flex flex-col gap-3">
+              <button onclick="navigateTo('home')" class="text-left py-2 text-sm tracking-wide">Inicio</button>
+              <button onclick="navigateTo('catalog')" class="text-left py-2 text-sm tracking-wide">Catálogo</button>
+              <button onclick="navigateTo('about')" class="text-left py-2 text-sm tracking-wide">Nosotros</button>
+            </nav>
+          </div>
+        </div>
+      </header>
+      
+      <main id="main-content" class="flex-1"></main>
+      
+      <footer id="main-footer" class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+            
+            <div class="flex flex-col items-center text-center">
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                  <span class="text-black font-display text-sm font-bold">L</span>
+                </div>
+                <span id="footer-store-name" class="font-display text-lg">Luxe Elixir</span>
+              </div>
+              <p id="footer-tagline" class="text-gray-400 text-sm">Fragancias originales para momentos únicos</p>
+            </div>
+            
+            <div class="flex flex-col items-center text-center">
+              <h4 class="font-semibold mb-4">Enlaces</h4>
+              <div class="flex flex-col gap-2 text-sm text-gray-400 items-center">
+                <button onclick="navigateTo('home')" class="hover:text-white transition-colors">Inicio</button>
+                <button onclick="navigateTo('catalog')" class="hover:text-white transition-colors">Catálogo</button>
+                <button onclick="navigateTo('about')" class="hover:text-white transition-colors">Nosotros</button>
+              </div>
+            </div>
+            
+            <div class="flex flex-col items-center text-center">
+              <h4 class="font-semibold mb-4">Contacto</h4>
+              <div class="flex flex-col gap-2 text-sm text-gray-400 items-center">
+                <p id="footer-email">📧 info@luxelixir.com</p>
+                <p id="footer-address">📍 Comitán de Domínguez, Chiapas</p>
+              </div>
+            </div>
+            
+            <div class="flex flex-col items-center text-center">
+              <h4 class="font-semibold mb-4">Síguenos</h4>
+              <div class="flex justify-center gap-4">
+                <a id="footer-wa-link" href="https://wa.me/529632242273?text=Hola! Me gustaría solicitar Apoyo con más modelos o pedir más informes sobre sus productos." target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer text-white no-underline">
+                  <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor">
+                    <path d="M12.004 0C5.374 0 0 5.373 0 12c0 2.13.566 4.191 1.637 6.004L.078 24.015l6.096-1.579C7.942 23.472 9.945 24 12.004 24 18.634 24 24 18.627 24 12c0-6.627-5.366-12-11.996-12zm.006 21.826c-1.928 0-3.812-.49-5.46-1.417l-.391-.223-3.601.933.957-3.46-.248-.389A9.824 9.824 0 012.18 12c0-5.418 4.41-9.826 9.83-9.826 5.417 0 9.826 4.408 9.826 9.826 0 5.42-4.409 9.826-9.826 9.826zM17.47 15.65c-.328-.163-1.94-.954-2.24-1.064-.299-.109-.517-.163-.733.163s-.841 1.064-1.031 1.282c-.19.218-.38.245-.708.082-.328-.163-1.385-.511-2.639-1.631-1.127-1.006-1.89-2.251-2.112-2.632-.218-.38-.024-.587.163-.749.163-.163.38-.463.57-.696.19-.233.25-.38.38-.632.129-.251.065-.463-.032-.696-.097-.233-.733-1.782-1.004-2.417-.265-.632-.51-.546-.733-.546h-.696c-.233 0-.604.082-.92.463-.316.38-1.21 1.182-1.21 2.887 0 1.706 1.246 3.353 1.417 3.571.17.218 2.449 3.737 5.923 5.232.827.355 1.474.566 1.98.729.83.265 1.587.228 2.186.136.671-.101 1.94-.79 2.21-1.55.272-.76.272-1.417.19-1.55-.082-.136-.299-.218-.626-.381z"/>
+                  </svg>
+                </a>
+                <a id="footer-ig-link" href="https://www.instagram.com/luxe_eelixir?igsh=MWduMHNodndxdm8zcg==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer text-white no-underline">
+                  <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.069-1.644-.069-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.918-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.072-4.948-.2-4.351-2.609-6.78-6.972-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                  </svg>
+                </a> 
+              </div>
+            </div>
+            
+          </div>
           
-          <a href="https://www.instagram.com/luxe_eelixir?igsh=MWduMHNodndxdm8zcg==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer text-white no-underline">
-            <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.069-1.644-.069-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.918-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.072-4.948-.2-4.351-2.609-6.78-6.972-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-            </svg>
-          </a> 
-          
+          <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p id="footer-copyright" class="text-gray-500 text-sm">© 2026 Luxe Elixir - Todos los derechos reservados</p>
+          </div>
           
         </div>
+      </footer>
+      <div id="product-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop absolute inset-0" onclick="closeProductModal()"></div>
+        <div class="absolute inset-4 md:inset-8 lg:inset-16 bg-white rounded-2xl overflow-hidden slide-up">
+          <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-black/10 hover:bg-black/20 rounded-full flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div id="product-modal-content" class="h-full overflow-y-auto"></div>
+        </div>
       </div>
-     </div>
-     <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-      <p id="footer-copyright" class="text-gray-500 text-sm">© 2026 Luxe Elixir - Todos los derechos reservados</p>
-     </div>
-    </div>
-   </footer><div id="product-modal" class="fixed inset-0 z-50 hidden">
-    <div class="modal-backdrop absolute inset-0" onclick="closeProductModal()"></div>
-    <div class="absolute inset-4 md:inset-8 lg:inset-16 bg-white rounded-2xl overflow-hidden slide-up"><button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-black/10 hover:bg-black/20 rounded-full flex items-center justify-center transition-colors">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg></button>
-     <div id="product-modal-content" class="h-full overflow-y-auto"></div>
-    </div>
-   </div><div id="cart-sidebar" class="fixed inset-0 z-50 hidden">
-    <div class="absolute inset-0 bg-black/50" onclick="closeCart()"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl slide-up">
-     <div class="h-full flex flex-col">
-      <div class="p-6 border-b border-gray-100 flex items-center justify-between">
-       <h2 class="font-display text-xl font-semibold">Tu Carrito</h2><button onclick="closeCart()" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg></button>
+      
+      <div id="cart-sidebar" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/50" onclick="closeCart()"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl slide-up">
+          <div class="h-full flex flex-col">
+            <div class="p-6 border-b border-gray-100 flex items-center justify-between">
+              <h2 class="font-display text-xl font-semibold">Tu Carrito</h2>
+              <button onclick="closeCart()" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6"></div>
+            <div id="cart-footer" class="p-6 border-t border-gray-100"></div>
+          </div>
+        </div>
       </div>
-      <div id="cart-items" class="flex-1 overflow-y-auto p-6"></div>
-      <div id="cart-footer" class="p-6 border-t border-gray-100"></div>
-     </div>
+      
+      <div id="auth-modal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop absolute inset-0" onclick="closeAuthModal()"></div>
+        <div class="absolute inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-md bg-white rounded-2xl overflow-hidden slide-up">
+          <div id="auth-modal-content" class="p-8"></div>
+        </div>
+      </div>
     </div>
-   </div><div id="auth-modal" class="fixed inset-0 z-50 hidden">
-    <div class="modal-backdrop absolute inset-0" onclick="closeAuthModal()"></div>
-    <div class="absolute inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-md bg-white rounded-2xl overflow-hidden slide-up">
-     <div id="auth-modal-content" class="p-8"></div>
-    </div>
-   </div>
-  </div>
+    
   <script>
     // ==================== State Management ====================
     let appData = {
@@ -294,22 +337,19 @@
       border_color: '#e5e7eb'
     };
 
-  // 👇 AQUÍ QUEDA TU NUEVO CÓDIGO PEGADO 👇
-    // Función que inyecta el logo y nombre en toda la página
-    // Función que inyecta el logo, nombre y COLORES en toda la página
-    window.applyTheme = function() {
-        const storeName = siteSettings.storeName || 'Luxe Elixir';
+  // Función que inyecta el logo, nombre y COLORES en toda la página
+  window.applyTheme = function() {
+      const storeName = siteSettings.storeName || 'Luxe Elixir';
       const storeTagline = siteSettings.storeTagline || 'Fragancias Originales';
       const initial = storeName.charAt(0).toUpperCase();
 
-      // 1. Cambia los textos del encabezado y pie de página
-      document.querySelectorAll('#header-store-name, #footer-store-name').forEach(el => el.textContent = storeName);
-      const taglineEl = document.querySelector('#header-store-name')?.nextElementSibling;
-      if(taglineEl) taglineEl.textContent = storeTagline;
-      const footerTaglineEl = document.getElementById('footer-tagline');
-      if(footerTaglineEl) footerTaglineEl.textContent = storeTagline;
+      // --- 1. ENCABEZADO (Header) ---
+      const headerStoreNameEl = document.getElementById('header-store-name');
+      if (headerStoreNameEl) headerStoreNameEl.textContent = storeName;
+      
+      const headerTaglineEl = document.querySelector('#header-store-name')?.nextElementSibling;
+      if(headerTaglineEl) headerTaglineEl.textContent = storeTagline;
 
-      // 2. Cambia los logos
       const headerLogo = document.querySelector('#main-header .w-10.h-10');
       if (headerLogo) {
         headerLogo.innerHTML = siteSettings.logoUrl 
@@ -318,15 +358,45 @@
         headerLogo.className = siteSettings.logoUrl ? 'w-10 h-10 rounded-full flex items-center justify-center bg-white border border-gray-200 overflow-hidden' : 'w-10 h-10 bg-black rounded-full flex items-center justify-center';
       }
 
+      // --- 2. PIE DE PÁGINA (Footer Textos y Logo) ---
+      const footerName = siteSettings.footerStoreName || storeName || 'Luxe Elixir';
+      const footerTaglineText = siteSettings.footerTagline || storeTagline || 'Fragancias Originales';
+      const initialFooter = footerName.charAt(0).toUpperCase();
+
+      const footerStoreNameEl = document.getElementById('footer-store-name');
+      if (footerStoreNameEl) footerStoreNameEl.textContent = footerName;
+      
+      const footerTaglineEl = document.getElementById('footer-tagline');
+      if (footerTaglineEl) footerTaglineEl.textContent = footerTaglineText;
+
+      // 👇 AHORA SON 100% INDEPENDIENTES 👇
+      const footerLogoUrl = siteSettings.footerLogoUrl; // Ya no tiene el '|| siteSettings.logoUrl'
       const footerLogo = document.querySelector('footer .w-8.h-8');
       if (footerLogo) {
-        footerLogo.innerHTML = siteSettings.logoUrl 
-          ? `<img src="${siteSettings.logoUrl}" class="w-full h-full object-cover rounded-full">`
-          : `<span class="text-black font-display text-sm font-bold">${initial}</span>`;
-        footerLogo.className = siteSettings.logoUrl ? 'w-8 h-8 rounded-full flex items-center justify-center bg-transparent border border-gray-600 overflow-hidden' : 'w-8 h-8 bg-white rounded-full flex items-center justify-center';
+        footerLogo.innerHTML = footerLogoUrl 
+          ? `<img src="${footerLogoUrl}" class="w-full h-full object-cover rounded-full">`
+          : `<span class="text-black font-display text-sm font-bold">${initialFooter}</span>`;
+        footerLogo.className = footerLogoUrl ? 'w-8 h-8 rounded-full flex items-center justify-center bg-transparent border border-gray-600 overflow-hidden' : 'w-8 h-8 bg-white rounded-full flex items-center justify-center';
       }
 
-      // 👇 3. MAGIA DE COLORES: INYECCIÓN DE CSS DINÁMICO 👇
+      // --- 3. REDES SOCIALES Y CONTACTO ---
+      const igLink = document.getElementById('footer-ig-link');
+      if (igLink) igLink.href = siteSettings.instagramUrl || 'https://www.instagram.com/luxe_eelixir?igsh=MWduMHNodndxdm8zcg==';
+
+      const waLink = document.getElementById('footer-wa-link');
+      if (waLink) {
+        const num = siteSettings.whatsappNumber || '529632242273';
+        const msg = encodeURIComponent(siteSettings.whatsappMessage || 'Hola! Me gustaría solicitar Apoyo con más modelos o pedir más informes sobre sus productos.');
+        waLink.href = `https://wa.me/${num}?text=${msg}`;
+      }
+
+      const emailEl = document.getElementById('footer-email');
+      if (emailEl) emailEl.textContent = '📧 ' + (siteSettings.contactEmail || 'info@luxelixir.com');
+
+      const addressEl = document.getElementById('footer-address');
+      if (addressEl) addressEl.textContent = '📍 ' + (siteSettings.contactAddress || 'Comitán de Domínguez, Chiapas');
+
+      // --- 4. MAGIA DE COLORES: INYECCIÓN DE CSS DINÁMICO ---
       const primaryColor = siteSettings.primaryColor || '#000000'; // Negro por defecto
       
       let themeStyle = document.getElementById('dynamic-theme');
@@ -388,9 +458,13 @@
         // (Si redibujamos el panel admin mientras tú escribes, se te borraría el texto).
         if (currentView !== 'admin') {
           renderCurrentView();
-        } else if (currentAdminTab === 'orders' || currentAdminTab === 'history') {
-          // Si el admin está viendo pedidos, sí refrescamos esa pestaña específica para ver nuevas ventas
-          switchAdminTab(currentAdminTab);
+        } else {
+          // ACTUALIZA LOS INGRESOS Y PEDIDOS MÁGICAMENTE SIN RECARGAR
+          if (typeof updateAdminStats === 'function') updateAdminStats();
+          
+          if (currentAdminTab === 'orders' || currentAdminTab === 'history') {
+            switchAdminTab(currentAdminTab);
+          }
         }
         
         // 5. Refrescamos elementos globales (Burbuja del carrito, menú y colores)
@@ -399,6 +473,7 @@
         applyTheme(); 
       }
     };
+
     function getProductFromSample(productId) {
       const index = parseInt(productId) || 0;
       if (index < sampleProducts.length) {
@@ -460,7 +535,6 @@
         ])
       });
     }
-
     
     // 🚀 INTEGRACIÓN FIREBASE DATA SDK (Importación dinámica)
     async function initDataSdk() {
@@ -617,6 +691,31 @@ const firebaseConfig = {
       `;
     }
 
+    // Función mágica para previsualizar imágenes antes de guardar
+    window.updateImagePreview = function(input, imgId, isFile) {
+      const imgEl = document.getElementById(imgId);
+      if (!imgEl) return;
+
+      if (isFile) {
+        // Si el usuario selecciona un archivo desde su PC/Celular
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            imgEl.src = e.target.result;
+            imgEl.classList.remove('hidden'); // Mostramos la imagen si estaba oculta
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      } else {
+        // Si el usuario pega una URL
+        const url = input.value.trim();
+        if (url) {
+          imgEl.src = url;
+          imgEl.classList.remove('hidden');
+        }
+      }
+    };
+
     function renderAdminDesign() {
       return `
         <div class="mb-6">
@@ -638,12 +737,13 @@ const firebaseConfig = {
               </div>
             </div>
           </div>
+          
           <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
             <h3 class="font-display text-xl font-semibold mb-4">Encabezado y Logo de la Tienda</h3>
             <div class="grid md:grid-cols-2 gap-4">
               <div class="md:col-span-1">
                 <label class="block text-sm font-medium mb-1">Nombre de la Tienda</label>
-                <input type="text" id="set-store-name" value="${siteSettings.storeName || 'Perfumería G&G'}" required class="input-field w-full px-4 py-2 rounded-lg">
+                <input type="text" id="set-store-name" value="${siteSettings.storeName || 'Luxe Elixir'}" required class="input-field w-full px-4 py-2 rounded-lg">
               </div>
               <div class="md:col-span-1">
                 <label class="block text-sm font-medium mb-1">Eslogan (Subtítulo superior)</label>
@@ -652,10 +752,10 @@ const firebaseConfig = {
               <div class="md:col-span-2 border-t border-gray-200 pt-4 mt-2">
                 <label class="block text-sm font-medium mb-3">Logo de la Tienda (Opcional)</label>
                 <div class="flex flex-col gap-2">
-                  <input type="file" id="set-logo-file" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
-                  <input type="url" id="set-logo-url" value="${siteSettings.logoUrl || ''}" placeholder="O pega una URL de imagen" class="input-field w-full px-4 py-2 rounded-lg">
+                  <input type="file" id="set-logo-file" accept="image/*" onchange="updateImagePreview(this, 'preview-logo', true)" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
+                  <input type="url" id="set-logo-url" value="${siteSettings.logoUrl || ''}" oninput="updateImagePreview(this, 'preview-logo', false)" placeholder="O pega una URL de imagen" class="input-field w-full px-4 py-2 rounded-lg">
                 </div>
-                ${siteSettings.logoUrl ? `<img src="${siteSettings.logoUrl}" class="h-16 w-16 mt-3 rounded-full shadow-sm object-cover border border-gray-200 bg-white">` : ''}
+                <img id="preview-logo" src="${siteSettings.logoUrl || ''}" class="h-16 w-16 mt-3 rounded-full shadow-sm object-cover border border-gray-200 bg-white ${siteSettings.logoUrl ? '' : 'hidden'}">
               </div>
             </div>
           </div>
@@ -678,18 +778,18 @@ const firebaseConfig = {
               <div class="md:col-span-2 border-t border-gray-200 pt-4 mt-2">
                 <label class="block text-sm font-medium mb-3">Imagen de Fondo Trasero (Opcional)</label>
                 <div class="flex flex-col gap-2">
-                  <input type="file" id="set-home-bg-file" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
-                  <input type="url" id="set-home-bg-url" value="${siteSettings.homeBackgroundImage || ''}" placeholder="O pega una URL" class="input-field w-full px-4 py-2 rounded-lg">
+                  <input type="file" id="set-home-bg-file" accept="image/*" onchange="updateImagePreview(this, 'preview-home-bg', true)" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
+                  <input type="url" id="set-home-bg-url" value="${siteSettings.homeBackgroundImage || ''}" oninput="updateImagePreview(this, 'preview-home-bg', false)" placeholder="O pega una URL" class="input-field w-full px-4 py-2 rounded-lg">
                 </div>
-                ${siteSettings.homeBackgroundImage ? `<img src="${siteSettings.homeBackgroundImage}" class="h-24 mt-3 rounded shadow-sm object-cover w-full max-w-xs">` : ''}
+                <img id="preview-home-bg" src="${siteSettings.homeBackgroundImage || ''}" class="h-24 mt-3 rounded shadow-sm object-cover w-full max-w-xs ${siteSettings.homeBackgroundImage ? '' : 'hidden'}">
               </div>
               <div class="md:col-span-2 border-t border-gray-200 pt-4 mt-2">
                 <label class="block text-sm font-medium mb-3">Imagen Principal de Frente (Perfume)</label>
                 <div class="flex flex-col gap-2">
-                  <input type="file" id="set-home-img-file" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
-                  <input type="url" id="set-home-img-url" value="${siteSettings.homeImage || ''}" placeholder="O pega una URL" class="input-field w-full px-4 py-2 rounded-lg">
+                  <input type="file" id="set-home-img-file" accept="image/*" onchange="updateImagePreview(this, 'preview-home-img', true)" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
+                  <input type="url" id="set-home-img-url" value="${siteSettings.homeImage || ''}" oninput="updateImagePreview(this, 'preview-home-img', false)" placeholder="O pega una URL" class="input-field w-full px-4 py-2 rounded-lg">
                 </div>
-                ${siteSettings.homeImage ? `<img src="${siteSettings.homeImage}" class="h-24 mt-3 rounded shadow-sm object-contain">` : ''}
+                <img id="preview-home-img" src="${siteSettings.homeImage || ''}" class="h-24 mt-3 rounded shadow-sm object-contain ${siteSettings.homeImage ? '' : 'hidden'}">
               </div>
             </div>
           </div>
@@ -729,10 +829,10 @@ const firebaseConfig = {
               <div class="md:col-span-2 mb-4 border-b border-gray-200 pb-5">
                 <label class="block text-sm font-medium mb-3">Imagen de la Página (Opcional)</label>
                 <div class="flex flex-col gap-2">
-                  <input type="file" id="set-about-img-file" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
-                  <input type="url" id="set-about-img-url" value="${siteSettings.aboutImage || ''}" placeholder="O pega una URL de imagen" class="input-field w-full px-4 py-2 rounded-lg">
+                  <input type="file" id="set-about-img-file" accept="image/*" onchange="updateImagePreview(this, 'preview-about-img', true)" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
+                  <input type="url" id="set-about-img-url" value="${siteSettings.aboutImage || ''}" oninput="updateImagePreview(this, 'preview-about-img', false)" placeholder="O pega una URL de imagen" class="input-field w-full px-4 py-2 rounded-lg">
                 </div>
-                ${siteSettings.aboutImage ? `<img src="${siteSettings.aboutImage}" class="h-32 mt-3 rounded shadow-sm object-cover aspect-[4/3]">` : ''}
+                <img id="preview-about-img" src="${siteSettings.aboutImage || ''}" class="h-32 mt-3 rounded shadow-sm object-cover aspect-[4/3] ${siteSettings.aboutImage ? '' : 'hidden'}">
               </div>
               <div class="md:col-span-2">
                 <label class="block text-sm font-medium mb-1">Título</label>
@@ -752,8 +852,57 @@ const firebaseConfig = {
               </div>
             </div>
           </div>
+          
+          <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <h3 class="font-display text-xl font-semibold mb-4">📱 Redes Sociales y Contacto</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium mb-1">Enlace de Instagram</label>
+                <input type="url" id="set-instagram-url" value="${siteSettings.instagramUrl || 'https://www.instagram.com/luxe_eelixir?igsh=MWduMHNodndxdm8zcg=='}" class="input-field w-full px-4 py-2 rounded-lg" placeholder="https://instagram.com/tu_usuario">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Número de WhatsApp</label>
+                <input type="text" id="set-whatsapp-number" value="${siteSettings.whatsappNumber || '529632242273'}" class="input-field w-full px-4 py-2 rounded-lg" placeholder="Ej. 529632242273">
+                <p class="text-xs text-gray-500 mt-1">Incluye el código de país (ej. 52) sin el signo +</p>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Correo Electrónico</label>
+                <input type="email" id="set-contact-email" value="${siteSettings.contactEmail || 'info@luxelixir.com'}" class="input-field w-full px-4 py-2 rounded-lg">
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium mb-1">Mensaje automático de WhatsApp</label>
+                <input type="text" id="set-whatsapp-message" value="${siteSettings.whatsappMessage || 'Hola! Me gustaría solicitar estilos técnico o pedir más informes sobre sus productos.'}" class="input-field w-full px-4 py-2 rounded-lg">
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium mb-1">Dirección Física</label>
+                <input type="text" id="set-contact-address" value="${siteSettings.contactAddress || 'Comitán de Domínguez, Chiapas'}" class="input-field w-full px-4 py-2 rounded-lg">
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+            <h3 class="font-display text-xl font-semibold mb-4">🔽 Pie de Página (Fondo Oscuro)</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Nombre en el pie de página</label>
+                <input type="text" id="set-footer-name" value="${siteSettings.footerStoreName || siteSettings.storeName || 'Luxe Elixir'}" class="input-field w-full px-4 py-2 rounded-lg">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Descripción corta</label>
+                <input type="text" id="set-footer-tagline" value="${siteSettings.footerTagline || siteSettings.storeTagline || 'Fragancias originales para momentos únicos'}" class="input-field w-full px-4 py-2 rounded-lg">
+              </div>
+              <div class="md:col-span-2 border-t border-gray-200 pt-4 mt-2">
+                <label class="block text-sm font-medium mb-3">Logo del pie de página (Ideal: PNG sin fondo)</label>
+                <div class="flex flex-col gap-2">
+                  <input type="file" id="set-footer-logo-file" accept="image/*" onchange="updateImagePreview(this, 'preview-footer-logo', true)" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-black file:text-white hover:file:bg-gray-800">
+                  <input type="url" id="set-footer-logo-url" value="${siteSettings.footerLogoUrl || ''}" oninput="updateImagePreview(this, 'preview-footer-logo', false)" placeholder="O pega una URL de imagen" class="input-field w-full px-4 py-2 rounded-lg">
+                </div>
+                <img id="preview-footer-logo" src="${siteSettings.footerLogoUrl || ''}" class="h-16 w-16 mt-3 rounded-full shadow-sm object-cover border border-gray-600 bg-black ${siteSettings.footerLogoUrl ? '' : 'hidden'}">
+              </div>
+            </div>
+          </div>
 
-          <button type="submit" id="save-design-btn" class="btn-primary w-full md:w-auto px-10 py-4 rounded-lg font-bold text-lg shadow-lg">
+          <button type="submit" id="save-design-btn" class="btn-primary w-full md:w-auto px-10 py-4 rounded-lg font-bold text-lg shadow-lg mt-8">
             Guardar Diseño y Textos
           </button>
         </form>
@@ -786,33 +935,37 @@ const firebaseConfig = {
       btn.disabled = true;
       btn.innerHTML = '<span class="inline-block animate-spin mr-2">⟳</span> Guardando...';
 
-      // Procesar Imagen de Inicio
-      let homeImg = document.getElementById('set-home-img-url').value.trim();
-      const homeFile = document.getElementById('set-home-img-file');
-      if (homeFile.files && homeFile.files[0]) {
-        try { homeImg = await processImageFile(homeFile.files[0]); } catch(err) {}
+      // 🧠 NUEVO MOTOR INTELIGENTE PARA IMÁGENES
+      // Decide automáticamente si guarda la foto nueva, la URL nueva, o mantiene la que ya existía.
+      async function getFinalImage(inputId, fileId, currentImage) {
+        let finalImage = currentImage || ''; 
+        
+        // 1. Si el usuario subió un archivo desde su computadora (Tiene máxima prioridad)
+        const fileEl = document.getElementById(fileId);
+        if (fileEl && fileEl.files && fileEl.files[0]) {
+          try {
+            return await processImageFile(fileEl.files[0]);
+          } catch(err) {
+            console.error("Error procesando imagen:", err);
+          }
+        }
+        
+        // 2. Si el usuario pegó una URL manual de internet
+        const inputEl = document.getElementById(inputId);
+        if (inputEl && inputEl.value.trim() !== '' && !inputEl.value.startsWith('data:image')) {
+          return inputEl.value.trim();
+        }
+        
+        // 3. Si no subió ni pegó nada, devolvemos la imagen intacta que ya estaba guardada
+        return finalImage;
       }
 
-      // Procesar Fondo de Inicio
-      let homeBgImg = document.getElementById('set-home-bg-url').value.trim();
-      const homeBgFile = document.getElementById('set-home-bg-file');
-      if (homeBgFile.files && homeBgFile.files[0]) {
-        try { homeBgImg = await processImageFile(homeBgFile.files[0]); } catch(err) {}
-      }
-
-      // Procesar LOGO DE LA TIENDA
-      let logoImg = document.getElementById('set-logo-url').value.trim();
-      const logoFile = document.getElementById('set-logo-file');
-      if (logoFile.files && logoFile.files[0]) {
-        try { logoImg = await processImageFile(logoFile.files[0]); } catch(err) {}
-      }
-
-      // Procesar IMAGEN NOSOTROS
-      let aboutImg = document.getElementById('set-about-img-url').value.trim();
-      const aboutFile = document.getElementById('set-about-img-file');
-      if (aboutFile.files && aboutFile.files[0]) {
-        try { aboutImg = await processImageFile(aboutFile.files[0]); } catch(err) {}
-      }
+      // Procesamos absolutamente todas las imágenes con el motor inteligente
+      const homeImg = await getFinalImage('set-home-img-url', 'set-home-img-file', siteSettings.homeImage);
+      const homeBgImg = await getFinalImage('set-home-bg-url', 'set-home-bg-file', siteSettings.homeBackgroundImage);
+      const logoImg = await getFinalImage('set-logo-url', 'set-logo-file', siteSettings.logoUrl);
+      const aboutImg = await getFinalImage('set-about-img-url', 'set-about-img-file', siteSettings.aboutImage);
+      const footerLogoImg = await getFinalImage('set-footer-logo-url', 'set-footer-logo-file', siteSettings.footerLogoUrl);
 
       // Recopilar categorías
       const catCards = document.querySelectorAll('.admin-cat-card');
@@ -828,13 +981,13 @@ const firebaseConfig = {
         });
       });
 
+      // Recopilar toda la información para enviarla a Firebase
       const updatedSettings = {
         ...siteSettings,
-        // 👇 GUARDAMOS EL COLOR PRINCIPAL 👇
         primaryColor: document.getElementById('set-primary-color').value,
         storeName: document.getElementById('set-store-name').value.trim(),
         storeTagline: document.getElementById('set-store-tagline').value.trim(),
-        logoUrl: logoImg,
+        logoUrl: logoImg, // <--- Aquí se guarda el logo seguro
         homeTitle: document.getElementById('set-home-title').value,
         homeSubtitle: document.getElementById('set-home-subtitle').value,
         homeBgColor: document.getElementById('set-home-bg').value,
@@ -845,9 +998,18 @@ const firebaseConfig = {
         aboutImage: aboutImg,
         aboutMission: document.getElementById('set-about-mission').value,
         aboutVision: document.getElementById('set-about-vision').value,
-        categories: newCategories
+        categories: newCategories,
+        instagramUrl: document.getElementById('set-instagram-url').value.trim(),
+        whatsappNumber: document.getElementById('set-whatsapp-number').value.trim(),
+        whatsappMessage: document.getElementById('set-whatsapp-message').value.trim(),
+        contactEmail: document.getElementById('set-contact-email').value.trim(),
+        contactAddress: document.getElementById('set-contact-address').value.trim(),
+        footerStoreName: document.getElementById('set-footer-name') ? document.getElementById('set-footer-name').value.trim() : '',
+        footerTagline: document.getElementById('set-footer-tagline') ? document.getElementById('set-footer-tagline').value.trim() : '',
+        footerLogoUrl: footerLogoImg // <--- Aquí se guarda el logo del footer seguro
       };
 
+      // Enviar a la base de datos
       if (window.dataSdk) {
         if (updatedSettings.__backendId) {
            await window.dataSdk.update(updatedSettings);
@@ -857,12 +1019,15 @@ const firebaseConfig = {
         }
       }
       
+      // Aplicar los cambios en pantalla en tiempo real
       siteSettings = updatedSettings;
-      applyTheme(); // Actualiza el color instantáneamente sin recargar la página
+      applyTheme(); 
+      
       showToast('Apariencia guardada correctamente');
       btn.disabled = false;
       btn.textContent = 'Guardar Diseño y Textos';
     }
+
     // Función para comprimir y convertir imágenes locales a Base64
    // Función para comprimir y convertir imágenes locales a Base64 (Soporta PNG transparente)
    function processImageFile(file) {
@@ -2144,6 +2309,54 @@ const firebaseConfig = {
    // 👇 REEMPLAZA DESDE AQUÍ 👇
    let currentAdminTab = 'products';
 
+   // Funciones mágicas para actualizar las tarjetas en vivo
+// Funciones mágicas para actualizar las tarjetas en vivo
+window.generateAdminStatsHTML = function() {
+  const products = appData.products.length > 0 ? appData.products : sampleProducts;
+  const safeOrders = appData.orders || [];
+  
+  // 1. Obtenemos el mes y el año en curso
+  const now = new Date();
+  const currentMonth = now.getMonth();
+  const currentYear = now.getFullYear();
+  
+  // 2. Filtramos pedidos que estén COMPLETADOS y que se hayan hecho ESTE MES
+  const completedOrdersThisMonth = safeOrders.filter(o => {
+    if (o.status !== 'completado') return false; // Solo los completados
+    if (!o.createdAt) return false; // Protección por si hay datos viejos sin fecha
+    
+    const orderDate = new Date(o.createdAt);
+    // Verificamos que coincida el mes y el año
+    return orderDate.getMonth() === currentMonth && orderDate.getFullYear() === currentYear;
+  });
+  
+  // 3. Sumamos solo los ingresos del mes en curso
+  const totalRevenue = completedOrdersThisMonth.reduce((sum, o) => sum + (parseFloat(o.total) || 0), 0);
+
+  // 4. Calculamos los pedidos activos (Omitiendo los ya completados y los cancelados)
+  const activeOrdersCount = safeOrders.filter(o => o.status !== 'completado' && o.status !== 'cancelado').length;
+  
+  return [
+    { label: 'Productos', value: products.length, icon: '📦', color: 'bg-blue-50' },
+    { label: 'Usuarios', value: appData.users.length, icon: '👥', color: 'bg-green-50' },
+    { label: 'Pedidos Activos', value: activeOrdersCount, icon: '🛒', color: 'bg-amber-50' },
+    { label: 'Ingresos (Mes)', value: formatPrice(totalRevenue), icon: '💰', color: 'bg-purple-50' } // Cambié el texto a "Ingresos (Mes)"
+  ].map(stat => `
+    <div class="${stat.color} rounded-xl p-6 shadow-sm transition-all duration-300">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-2xl">${stat.icon}</span>
+        <span class="text-sm text-gray-600 font-medium">${stat.label}</span>
+      </div>
+      <p class="text-2xl font-bold text-gray-900">${stat.value}</p>
+    </div>
+  `).join('');
+};
+
+window.updateAdminStats = function() {
+  const container = document.getElementById('admin-stats-cards');
+  if (container) container.innerHTML = generateAdminStatsHTML();
+};
+
 function renderAdminPage() {
   if (!currentUser || currentUser.role !== 'admin') {
     return `
@@ -2203,22 +2416,9 @@ function renderAdminPage() {
           <button onclick="navigateTo('home')" class="btn-secondary px-4 py-2 rounded-lg">← Volver a la Tienda</button>
         </div>
         
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          ${[
-            { label: 'Productos', value: products.length, icon: '📦', color: 'bg-blue-50' },
-            { label: 'Usuarios', value: appData.users.length, icon: '👥', color: 'bg-green-50' },
-            { label: 'Pedidos Activos', value: safeOrders.filter(o => o.status !== 'completado').length, icon: '🛒', color: 'bg-amber-50' },
-            { label: 'Ingresos Netos', value: formatPrice(totalRevenue), icon: '💰', color: 'bg-purple-50' }
-          ].map(stat => `
-            <div class="${stat.color} rounded-xl p-6 shadow-sm">
-              <div class="flex items-center gap-3 mb-2">
-                <span class="text-2xl">${stat.icon}</span>
-                <span class="text-sm text-gray-600 font-medium">${stat.label}</span>
-              </div>
-              <p class="text-2xl font-bold">${stat.value}</p>
-            </div>
-          `).join('')}
-        </div>
+        <div id="admin-stats-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+  ${generateAdminStatsHTML()}
+</div>
         
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
           <div class="border-b border-gray-200 bg-gray-50">
@@ -2890,8 +3090,8 @@ function renderAdminProducts() {
             ${transferOrders.map((order) => {
               const customer = appData.users.find(u => u.__backendId === order.userId);
               return `
-                <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm flex flex-col">
-                  <div class="flex justify-between items-start mb-3">
+                <div class="bg-white rounded-xl p-5 border border-gray-200 shadow-sm flex flex-col">
+                  <div class="flex justify-between items-start mb-4">
                     <div>
                       <p class="font-medium text-sm">Pedido #${order.__backendId.slice(-6).toUpperCase()}</p>
                       <p class="text-xs text-gray-500">${customer?.name || 'Cliente'}</p>
@@ -2899,18 +3099,24 @@ function renderAdminProducts() {
                     <span class="font-semibold text-sm bg-gray-100 px-2 py-1 rounded">${formatPrice(order.total)}</span>
                   </div>
                   
-                  <div class="relative aspect-square bg-gray-50 rounded-lg border border-gray-200 overflow-hidden mb-4 flex items-center justify-center cursor-pointer group" onclick="viewReceiptImage('${order.receiptImage}')">
-                    <img src="${order.receiptImage}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                       <span class="text-white text-sm font-medium">🔍 Ver Completo</span>
+                  <details class="group mb-4">
+                    <summary class="cursor-pointer text-sm text-blue-600 hover:text-blue-800 font-medium list-none flex items-center gap-2 select-none">
+                      <span class="bg-blue-50 px-2 py-1 rounded text-xs transition-transform group-open:rotate-180">▼</span>
+                      Mostrar / Ocultar Comprobante
+                    </summary>
+                    
+                    <div class="mt-3 relative aspect-video bg-gray-50 rounded-lg border border-gray-200 overflow-hidden flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" onclick="viewReceiptImage('${order.receiptImage}')" title="Haz clic para ver en pantalla completa">
+                      <img src="${order.receiptImage}" class="w-full h-full object-contain">
+                      <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-1 rounded-md backdrop-blur-sm pointer-events-none">
+                        🔍 Ampliar
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div class="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between">
-                    <span class="px-2 py-1 ${order.status === 'validando pago' ? 'bg-amber-100 text-amber-700' : 'bg-gray-100 text-gray-700'} rounded-full text-xs font-medium capitalize">
+                  </details>
+                  <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <span class="px-2 py-1 ${order.status === 'validando pago' ? 'bg-amber-100 text-amber-700' : 'bg-gray-100 text-gray-700'} rounded-full text-[10px] font-medium capitalize whitespace-nowrap">
                       ${order.status}
                     </span>
-                    <select onchange="updateOrderStatusById('${order.__backendId}', this.value)" class="text-xs border border-gray-300 rounded p-1.5 focus:border-black outline-none bg-white">
+                    <select onchange="updateOrderStatusById('${order.__backendId}', this.value)" class="text-xs border border-gray-300 rounded px-2 py-1.5 focus:border-black outline-none bg-white w-full max-w-[140px]">
                       <option value="validando pago" ${order.status === 'validando pago' ? 'selected' : ''}>⏳ Pendiente</option>
                       <option value="procesando" ${order.status === 'procesando' ? 'selected' : ''}>✅ Aprobar Pago</option>
                       <option value="cancelado" ${order.status === 'cancelado' ? 'selected' : ''}>❌ Rechazar</option>
@@ -2923,7 +3129,6 @@ function renderAdminProducts() {
         `}
       `;
     }
-
     // Función para abrir la imagen del comprobante en pantalla completa
     function viewReceiptImage(imageUrl) {
       const overlay = document.createElement('div');
