@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfumería G&amp;G</title>
+  <title>Perfumería luxe elixir</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -1161,7 +1161,7 @@ const firebaseConfig = {
           </button>
           <div class="text-center mb-8">
             <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-white font-display text-2xl font-bold">G</span>
+              <span class="text-white font-display text-2xl font-bold">L</span>
             </div>
             <h2 class="font-display text-2xl font-semibold">Bienvenido</h2>
             <p class="text-gray-500 text-sm mt-1">Inicia sesión en tu cuenta</p>
@@ -1198,7 +1198,7 @@ const firebaseConfig = {
             <p class="text-sm text-gray-500">¿No tienes cuenta? <button onclick="openAuthModal('register')" class="text-black font-medium hover:underline">Regístrate</button></p>
           </div>
           <div class="mt-4 p-3 bg-gray-50 rounded-lg">
-            <p class="text-xs text-gray-500 text-center">Demo Admin: admin@gyg.com / admin123</p>
+            <p class="text-xs text-gray-500 text-center"></p>
           </div>
         `;
       } else {
@@ -1272,12 +1272,12 @@ const firebaseConfig = {
       btn.innerHTML = '<span class="inline-block animate-spin mr-2">⟳</span> Ingresando...';
       
       // Check for demo admin
-      if (email === 'admin@gyg.com' && password === 'admin123') {
+      if (email === 'Gomezmoralesangelricardo@gmail.com' && password === 'ANGELITO161130') {
         currentUser = {
           __backendId: 'admin-demo',
           type: 'user',
           name: 'Administrador',
-          email: 'admin@gyg.com',
+          email: 'Gomezmoralesangelricardo@gmail.com',
           role: 'admin'
         };
         closeAuthModal();
@@ -2155,24 +2155,21 @@ const firebaseConfig = {
                       </div>
                     </div>
                   </div>
+                  
                   <div class="bg-gray-50 rounded-xl p-6">
                     <h2 class="font-semibold text-lg mb-4">Método de Pago</h2>
                     <div class="space-y-3">
-                      <label class="flex items-center gap-3 p-4 border border-gray-200 bg-white rounded-lg cursor-pointer hover:border-black transition-colors">
-                        <input type="radio" name="payment" value="card" checked class="w-4 h-4 text-black" onchange="toggleBankDetails()">
-                        <span class="font-medium">💳 Tarjeta de Crédito/Débito</span>
-                      </label>
-                      <label class="flex items-center gap-3 p-4 border border-gray-200 bg-white rounded-lg cursor-pointer hover:border-black transition-colors">
-                        <input type="radio" name="payment" value="transfer" class="w-4 h-4 text-black" onchange="toggleBankDetails()">
+                      <label class="flex items-center gap-3 p-4 border border-black bg-white rounded-lg cursor-pointer transition-colors">
+                        <input type="radio" name="payment" value="transfer" checked class="w-4 h-4 text-black">
                         <span class="font-medium">🏦 Transferencia Bancaria</span>
                       </label>
                     </div>
                     
-                    <div id="bank-details" class="hidden mt-4 p-5 bg-blue-50 border border-blue-100 rounded-lg text-blue-900">
+                    <div id="bank-details" class="mt-4 p-5 bg-blue-50 border border-blue-100 rounded-lg text-blue-900">
                       <p class="font-semibold mb-2">Realiza tu transferencia a esta cuenta:</p>
-                      <p class="text-sm"><strong>Banco:</strong> BBVA Bancomer</p>
-                      <p class="text-sm"><strong>CLABE:</strong> 0123 4567 8901 2345 67</p>
-                      <p class="text-sm"><strong>Titular:</strong> Perfumería G&G S.A. de C.V.</p>
+                      <p class="text-sm"><strong>Banco:</strong> Nu mexico</p>
+                      <p class="text-sm"><strong>CLABE:</strong>638180000120278936</p>
+                      <p class="text-sm"><strong>Titular:</strong> Luxe Elixir</p>
                       <div class="mt-3 text-xs bg-white/50 p-2 rounded inline-block">
                         ⚠️ Al presionar Confirmar, se te pedirá cargar tu comprobante.
                       </div>
@@ -2211,7 +2208,6 @@ const firebaseConfig = {
         </section>
       `;
     }
-
     let pendingOrderData = null; 
 
     async function handleCheckout(e) {
